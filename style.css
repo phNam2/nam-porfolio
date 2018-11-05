@@ -59,9 +59,9 @@ body {
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 3.0s;
+  -webkit-animation-duration: 6.0s;
   animation-name: fade;
-  animation-duration: 3.0s;
+  animation-duration: 6.0s;
     margin-top: 20px;
 }
 
