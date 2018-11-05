@@ -28,8 +28,9 @@ body {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
+  color:black;
+  font-size: 40px;
+  font-family: cursive;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -40,9 +41,9 @@ body {
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
-  font-size: 12px;
+  font-size: 20px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   top: 0;
 }
 
@@ -67,7 +68,6 @@ body {
   -webkit-animation-duration: 6.0s;
   animation-name: fade;
   animation-duration: 6.0s;
-    margin-top: 20px;
 }
 
 @-webkit-keyframes fade {
