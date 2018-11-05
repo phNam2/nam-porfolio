@@ -19,7 +19,6 @@ body {
 #slideshow {
 /*    background-color:aqua;*/
     position:relative;
-    align-self: center;
 }
 
 /* Caption text */
@@ -63,12 +62,7 @@ body {
   -webkit-animation-duration: 3.0s;
   animation-name: fade;
   animation-duration: 3.0s;
-}
-
-.im {
-    margin-left: 500px;
-    margin-right: auto;
-    position: relative;
+    margin-top: 20px;
 }
 
 @-webkit-keyframes fade {
