@@ -1,0 +1,22 @@
+body, html {
+    background: url("image/snow.gif");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*
+.jumbotron{
+    background: url("image/snow.gif");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+*/
+
