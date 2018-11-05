@@ -15,6 +15,11 @@ body {
     background-color: aqua;
 }
 
+.nav-link:hover {
+    background-color: #1ecc24;
+    font-size: 20px;
+}
+
 /*--------------------------------------------------------------------------------------------------------------------------*/
 #slideshow {
 /*    background-color:aqua;*/
