@@ -35,6 +35,8 @@ html {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
     display: none;
 }
 
@@ -45,6 +47,8 @@ html {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
     display: none;
 }
 
@@ -55,6 +59,8 @@ html {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
     display: none;
 }
 
@@ -65,6 +71,8 @@ html {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
     display: none;
 }
 
@@ -75,6 +83,8 @@ html {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
     display: none;
 }
 
@@ -85,6 +95,8 @@ html {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1;
+    position: absolute;
     display: none;
 }
 
@@ -94,3 +106,35 @@ html {
     display: none;
 }
 
+#apology{
+    width: 800px;
+    height: 600px;
+/*    background-color: red;*/
+    text-align:left;
+    margin: 0px auto;
+    right: 300px;
+    z-index: 10;
+/*    display: block;*/
+}
+.al{
+    text-align: center;
+    width: 600px;
+    height: 150px;
+    margin: 30px auto;
+    background-color: #0f8beb;
+    border-radius: 20px;
+    font-size: 40px;
+    line-height: 3.5;
+}
+
+#oop{
+    display: none;
+}
+
+#wrong {
+    display: none;
+}
+
+#sorry {
+    display: none;
+}
