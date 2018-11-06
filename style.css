@@ -7,18 +7,16 @@ body {
     background-repeat: no-repeat;
 }
 
-#head{
-    text-align: left;
-/*    position: absolute;*/
-}
 
-.nav{
-    right: 20px;
+#navbarTogglerDemo01{
+    position:absolute;
+    left: 120px;
 }
 
 .navbar-toggler:hover{
     background-color: aqua;
 }
+
 
 .nav-link{
     font-family: cursive;
@@ -27,13 +25,13 @@ body {
 
 .nav-link:hover {
     background-color: #ffea0e;
-    font-size: 20px;
+/*    text-transform: uppercase;*/
 }
+
 
 #middle{
     position: relative;
 }
-
 /*--------------------------------------------------------------------------------------------------------------------------*/
 #slideshow {
 /*    background-color:aqua;*/
