@@ -149,6 +149,7 @@ function loadPage() {
     show("offine7");
     hide("loadText");
     show("loader");
+    window.document.title = "Loading...";
     
     if (x=0) {
         action5 =  setTimeout(function(){
