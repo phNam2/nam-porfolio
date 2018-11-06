@@ -31,7 +31,9 @@ body {
 #middle{
     position: relative;
 }
-/*--------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*--SLIDE SHOW------------------------------------------------------------------------------------------------------------------------*/
 #slideshow {
 /*    background-color:aqua;*/
     position:relative;
@@ -135,3 +137,27 @@ footer{
     right: 10px;  
     margin-top: 5px;
 }
+
+
+#email {
+    width: 800px;
+    height: 800px;
+    background: linear-gradient(#45e848, #168e16, #0ac90d);
+    padding: 40;
+    margin: 50 auto;
+    border-radius: 20px;
+    font-family: cursive
+}
+
+input {
+    border-radius: 10px;
+    padding-right: 6px;
+}
+
+.but{
+    border-radius: 30px;
+}
+
+
+
+
