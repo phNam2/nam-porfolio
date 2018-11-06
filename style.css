@@ -17,7 +17,6 @@ body {
     background-color: aqua;
 }
 
-
 .nav-link{
     font-family: cursive;
     color: black;
@@ -108,6 +107,7 @@ body {
     font-family: cursive;
     font-size: 20px;
     padding: 20px;
+    margin-top: 25px;
     border-radius: 20px;
 }
 
