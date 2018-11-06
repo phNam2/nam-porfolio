@@ -8,10 +8,13 @@ body {
 }
 
 #head{
-    text-align: right;
+    text-align: left;
 /*    position: absolute;*/
 }
 
+.nav{
+    right: 20px;
+}
 
 .navbar-toggler:hover{
     background-color: aqua;
