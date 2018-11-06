@@ -164,7 +164,7 @@ input {
 }
 .con {
     position: relative;
-    margin: 20px 95px 40px 105px;
+    margin: 20px 95px 30px 105px;
     float: left;
 }
 
@@ -172,4 +172,7 @@ input {
      right: 30px;
 }
 
+.expand {
+     margin: 20px 150px 30px 130px;
+}
 
