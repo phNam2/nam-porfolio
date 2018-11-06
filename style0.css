@@ -28,3 +28,69 @@ html {
     position: relative;
 }
 
+#offine1{
+    background: url("image/brow/GC.png");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#offine2{
+    background: url("image/brow/IE.PNG");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#offine3{
+    background: url("image/brow/MF.PNG");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#offine4{
+    background: url("image/brow/Microsofted.PNG");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#offine5{
+    background: url("image/brow/Opera.PNG");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#offine6{
+    background: url("image/brow/V.PNG");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#offine7{
+    margin-top: 100px;
+    text-align: center;
+    display: none;
+}
+
