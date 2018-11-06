@@ -1,7 +1,7 @@
 body {
     background: url("image/snow.gif");
     background-size: cover;
-    height: 1040px;
+    height: 1000px;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,6 +22,7 @@ body {
 
 .nav-link{
     font-family: cursive;
+    color: black;
 }
 
 .nav-link:hover {
