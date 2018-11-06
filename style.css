@@ -111,6 +111,7 @@ body {
     padding: 20px;
     margin-top: 25px;
     border-radius: 20px;
+    box-shadow: 8px 8px 8px 4px #3d1075;
 }
 
 footer{
