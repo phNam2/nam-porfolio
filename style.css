@@ -9,7 +9,9 @@ body {
 
 #head{
     text-align: right;
+/*    position: absolute;*/
 }
+
 
 .navbar-toggler:hover{
     background-color: aqua;
@@ -22,6 +24,10 @@ body {
 .nav-link:hover {
     background-color: #ffea0e;
     font-size: 20px;
+}
+
+#middle{
+    position: relative;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------*/
@@ -99,6 +105,7 @@ body {
     font-family: cursive;
     font-size: 20px;
     padding: 20px;
+    border-radius: 20px;
 }
 
 footer{
