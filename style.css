@@ -123,6 +123,10 @@ footer{
     margin: 0px auto;
 }
 
+#foot0 {
+    position: fixed;
+}
+
 #foot1 {
     position:fixed;
     right: 30px;   
