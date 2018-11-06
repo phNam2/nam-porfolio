@@ -2,6 +2,9 @@ var action1;
 var action2;
 var action3;
 var action4;
+var action5;
+
+var x=0;
 
 document.getElementById("gc").onclick = function() {
     hide("container");
@@ -10,18 +13,18 @@ document.getElementById("gc").onclick = function() {
     
     action1 =  setTimeout(function(){
         show("oop");
-    }, 6000);
+    }, 4000);
     action2 =  setTimeout(function(){
         show("wrong");
-    }, 8000);
+    }, 6000);
     action3 =  setTimeout(function(){
         show("sorry");
-    }, 10000);
+    }, 8000);
     action4 =  setTimeout(function(){
         hide("offine1");
         hide("apology");
         loadPage();
-    }, 12000);
+    }, 10000);
     
 }
 
@@ -32,18 +35,18 @@ document.getElementById("ie").onclick = function() {
     
     action1 =  setTimeout(function(){
         show("oop");
-    }, 6000);
+    }, 4000);
     action2 =  setTimeout(function(){
         show("wrong");
-    }, 8000);
+    }, 6000);
     action3 =  setTimeout(function(){
         show("sorry");
-    }, 10000);
+    }, 8000);
     action4 =  setTimeout(function(){
         hide("offine2");
         hide("apology");
         loadPage();
-    }, 12000);
+    }, 10000);
 }
 
 document.getElementById("mf").onclick = function() {
@@ -53,18 +56,18 @@ document.getElementById("mf").onclick = function() {
     
     action1 =  setTimeout(function(){
         show("oop");
-    }, 6000);
+    }, 4000);
     action2 =  setTimeout(function(){
         show("wrong");
-    }, 8000);
+    }, 6000);
     action3 =  setTimeout(function(){
         show("sorry");
-    }, 10000);
+    }, 8000);
     action4 =  setTimeout(function(){
         hide("offine3");
         hide("apology");
         loadPage();
-    }, 12000);
+    }, 10000);
 }
 
 document.getElementById("me").onclick = function() {
@@ -74,18 +77,18 @@ document.getElementById("me").onclick = function() {
     
     action1 =  setTimeout(function(){
         show("oop");
-    }, 6000);
+    }, 4000);
     action2 =  setTimeout(function(){
         show("wrong");
-    }, 8000);
+    }, 6000);
     action3 =  setTimeout(function(){
         show("sorry");
-    }, 10000);
+    }, 8000);
     action4 =  setTimeout(function(){
         hide("offine4");
         hide("apology");
         loadPage();
-    }, 12000);
+    }, 10000);
 }
 
 document.getElementById("op").onclick = function() {
@@ -95,18 +98,18 @@ document.getElementById("op").onclick = function() {
     
     action1 =  setTimeout(function(){
         show("oop");
-    }, 6000);
+    }, 4000);
     action2 =  setTimeout(function(){
         show("wrong");
-    }, 8000);
+    }, 6000);
     action3 =  setTimeout(function(){
         show("sorry");
-    }, 10000);
+    }, 8000);
     action4 =  setTimeout(function(){
         hide("offine5");
         hide("apology");
         loadPage();
-    }, 12000);
+    }, 10000);
 }
 
 document.getElementById("vi").onclick = function() {
@@ -116,18 +119,18 @@ document.getElementById("vi").onclick = function() {
     
     action1 =  setTimeout(function(){
         show("oop");
-    }, 6000);
+    }, 4000);
     action2 =  setTimeout(function(){
         show("wrong");
-    }, 8000);
+    }, 6000);
     action3 =  setTimeout(function(){
         show("sorry");
-    }, 10000);
+    }, 8000);
     action4 =  setTimeout(function(){
         hide("offine6");
         hide("apology");
         loadPage();
-    }, 12000);
+    }, 10000);
 }
 
 document.getElementById("other").onclick = function() {
@@ -135,16 +138,27 @@ document.getElementById("other").onclick = function() {
     window.document.title = "LOL";
     show("offine7");
     
+    x=1;
     action4 =  setTimeout(function(){
         hide("offine7");
         loadPage();
-    }, 6000);
+    }, 4000);
 }
 
 function loadPage() {
     show("offine7");
     hide("loadText");
     show("loader");
+    
+    if (x=0) {
+        action5 =  setTimeout(function(){
+            window.location.assign("index1.html");
+        }, 13000);
+    } else {
+        action5 =  setTimeout(function(){
+            window.location.assign("index1.html");
+        }, 7000);
+    }
 }
 
 // Function used to hide the properties
