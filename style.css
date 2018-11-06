@@ -146,7 +146,7 @@ footer{
     padding: 40;
     margin: 50 auto;
     border-radius: 20px;
-    font-family: cursive
+    font-family: cursive;
 }
 
 input {
@@ -158,6 +158,18 @@ input {
     border-radius: 30px;
 }
 
+#second {
+    float: left;
+    text-align: center
+}
+.con {
+    position: relative;
+    margin: 0px 75px 20px 65px;
+    float: left;
+}
 
+#outlook{
+     right: 30px;
+}
 
 
