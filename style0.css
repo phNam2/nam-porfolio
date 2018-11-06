@@ -1,0 +1,12 @@
+#container {
+    margin:100 20px;  
+    width: 1300px;
+    height: 800px;
+    text-align: center
+    
+}
+
+.browser {
+    margin: 20px 60px;
+    cursor: pointer;
+}
