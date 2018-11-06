@@ -20,6 +20,7 @@ document.getElementById("gc").onclick = function() {
     action4 =  setTimeout(function(){
         hide("offine1");
         hide("apology");
+        loadPage();
     }, 12000);
     
 }
@@ -41,6 +42,7 @@ document.getElementById("ie").onclick = function() {
     action4 =  setTimeout(function(){
         hide("offine2");
         hide("apology");
+        loadPage();
     }, 12000);
 }
 
@@ -61,6 +63,7 @@ document.getElementById("mf").onclick = function() {
     action4 =  setTimeout(function(){
         hide("offine3");
         hide("apology");
+        loadPage();
     }, 12000);
 }
 
@@ -81,6 +84,7 @@ document.getElementById("me").onclick = function() {
     action4 =  setTimeout(function(){
         hide("offine4");
         hide("apology");
+        loadPage();
     }, 12000);
 }
 
@@ -101,6 +105,7 @@ document.getElementById("op").onclick = function() {
     action4 =  setTimeout(function(){
         hide("offine5");
         hide("apology");
+        loadPage();
     }, 12000);
 }
 
@@ -121,6 +126,7 @@ document.getElementById("vi").onclick = function() {
     action4 =  setTimeout(function(){
         hide("offine6");
         hide("apology");
+        loadPage();
     }, 12000);
 }
 
@@ -131,7 +137,14 @@ document.getElementById("other").onclick = function() {
     
     action4 =  setTimeout(function(){
         hide("offine7");
+        loadPage();
     }, 6000);
+}
+
+function loadPage() {
+    show("offine7");
+    hide("loadText");
+    show("loader");
 }
 
 // Function used to hide the properties
