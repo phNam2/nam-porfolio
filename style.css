@@ -11,7 +11,7 @@ body {
 #navbarTogglerDemo01{
     position:absolute;
     left: 120px;
-    top: 0px;
+    top: 10px;
 }
 
 .navbar-toggler:hover{
