@@ -11,7 +11,7 @@ body {
 #navbarTogglerDemo01{
     position:absolute;
     left: 120px;
-    top: 10px;
+    top: 8px;
 }
 
 .navbar-toggler:hover{
@@ -28,6 +28,12 @@ body {
 /*    text-transform: uppercase;*/
 }
 
+#raw {
+    text-align: center;
+    position: fixed;
+    top: 8px;
+    right: 10px;
+}
 
 #middle{
     position: relative;
