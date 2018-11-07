@@ -30,7 +30,7 @@ body {
 
 #raw {
     text-align: center;
-    position: fixed;
+    position: absolute;
     top: 8px;
     right: 10px;
 }
