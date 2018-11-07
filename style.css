@@ -196,12 +196,13 @@ input {
     width: 1000px;
     height: 800px;
     background: radial-gradient(#0a1187, #4c43cc);
-    margin: 40px auto;
-    padding: 0px;
+    margin: 40px auto 0px;
+    padding: 30px;
     border-radius: 20px;
     position: relative;
     
 }
+
 
 
 
