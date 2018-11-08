@@ -217,6 +217,7 @@ input {
     position: relative;
     cursor: pointer;
     left: 900px;
+    display: none;
 }
 
 #back:hover {
@@ -229,7 +230,7 @@ input {
 }
 
 .detail {
-    position: absolute;
+    position: relative;
     text-align: center;
 }
 
@@ -247,3 +248,18 @@ input {
     color: #ead515;
 }
 
+#project1 {
+    display: none;
+}
+
+#project2 {
+    display: none;
+}
+
+#project3 {
+    display: none;
+}
+
+#project4 {
+    display: none;
+}
