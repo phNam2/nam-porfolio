@@ -271,6 +271,14 @@ input {
     background-color: #9b0c0c;
 }
 
+#all h1 {
+    font-family: cursive;
+    color: white;
+    text-align: center;
+    top: 20px;
+    position: relative;
+}
+
 .pic{
     position: absolute;
     margin: 40px;
@@ -280,20 +288,34 @@ input {
 
 .pic:active {
     box-shadow: 0px 0px black;
-    top: 2px;
 }
 
-#all3 {
-    right: 10px;
+#all1 {
+    top: 50px;
+}
+
+#all1:active {
+    top: 52px;
 }
 
 #all2 {
-    top: 190px;
+    top: 240px;
 }
 
 #all2:active {
-    top: 192px;
+    top: 242px;
 }
+
+#all3 {
+    top: 50px;
+    right: 10px;
+}
+
+#all3:active {
+    top: 52px;
+    right: 10px;
+}
+
 
 #all4 {
     top: -40px;
