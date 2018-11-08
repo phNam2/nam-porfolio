@@ -274,6 +274,13 @@ input {
 .pic{
     position: absolute;
     margin: 40px;
+    cursor: pointer;
+    box-shadow: 3px 3px black;
+}
+
+.pic:active {
+    box-shadow: 0px 0px black;
+    top: 2px;
 }
 
 #all3 {
@@ -284,8 +291,15 @@ input {
     top: 190px;
 }
 
+#all2:active {
+    top: 192px;
+}
+
 #all4 {
     top: -40px;
     left: 305px;
 }
 
+#all4:active {
+    top: -38px;
+}
