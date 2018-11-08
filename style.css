@@ -228,6 +228,11 @@ input {
     top: 2px;
 }
 
+.detail {
+    position: absolute;
+    text-align: center;
+}
+
 
 
 
