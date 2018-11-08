@@ -1,3 +1,5 @@
+// The link to the stop iframe: http://jsfiddle.net/MadLittleMods/3J2wT/
+
 var vid = 0;
 
 document.getElementById("all1").onclick = function() {
