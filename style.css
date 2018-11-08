@@ -269,6 +269,7 @@ input {
     height: 740px;
     position: relative;
     background-color: #9b0c0c;
+    display: block;
 }
 
 #all h1 {
