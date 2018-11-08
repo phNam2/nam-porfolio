@@ -270,3 +270,22 @@ input {
     position: relative;
     background-color: #9b0c0c;
 }
+
+.pic{
+    position: absolute;
+    margin: 40px;
+}
+
+#all3 {
+    right: 10px;
+}
+
+#all2 {
+    top: 190px;
+}
+
+#all4 {
+    top: -40px;
+    left: 305px;
+}
+
