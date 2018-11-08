@@ -287,6 +287,10 @@ input {
     box-shadow: 3px 3px black;
 }
 
+.pic:hover {
+    box-shadow: 4px 4px 4px white;
+}
+
 .pic:active {
     box-shadow: 0px 0px black;
 }
