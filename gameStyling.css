@@ -1,0 +1,171 @@
+body {
+    background: url("image/snow.gif");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#sidelines {
+    background-color: #514e4e;
+    height: 100%;
+    width: 300px;
+    position: absolute;        
+}
+
+#enemy {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: aqua;
+}
+
+#ship {
+    margin-top 20px;
+}
+
+#enemyLeft {
+    width: 230px;
+    height: 60px;
+    background-color: yellow;
+    margin: 0px auto;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 2.8;
+}
+
+#us{
+    text-align: center;
+    padding-bottom: 10px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: #b213aa;
+    height: 53%;
+}
+
+#point {
+    width: 160px;
+    height: 60px;
+    background-color: #ce7604;
+    margin: 20px auto;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 2.8;
+    border-radius: 20px;
+}
+
+#time {
+    width: 200px;
+    height: 50px;
+    background-color: #087008;
+    margin: 20px auto;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 2.5;
+    border-radius: 20px;
+}
+
+#live {
+    width: 250px;
+    height: 50px;
+    margin: auto;
+    background-color: #1185dd;
+}
+
+#buttons {
+    width: 280px;
+    height: 66px;
+    margin: 30px auto 10px;
+    font-family: cursive;
+}
+
+#main {
+    width: 75px;
+    height: 40px;
+    position: absolute;
+    top: 580px;
+    left: 20px;
+    line-height: 2.3;
+    border-radius: 20px;
+    background-color: #f76f6f;
+    box-shadow: 0px 2px black;
+    cursor: pointer;
+}
+
+#main:hover {
+    background-color: white;
+}
+
+#main:active {
+    top: 582px;
+    box-shadow: 0px 0px black;
+}
+
+#StartReset{
+    width: 155px;
+    height: 40px;
+    position: absolute;
+    top: 580px;
+    left: 120px;
+    line-height: 2.3;
+    border-radius: 20px;
+    background-color: #d31313;
+    box-shadow: 0px 2px black;
+    cursor: pointer;
+    color: white;
+}
+
+#StartReset:hover {
+    background-color: yellow;
+    color: black;
+}
+
+#StartReset:active {
+    top: 582px;
+    box-shadow: 0px 0px black;
+}
+
+#instruction {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    position: absolute;
+    top: 632px;
+    left: 60px;
+    border-radius: 20px;
+    box-shadow: 0px 2px black;
+    cursor: pointer;
+/*    line-height: ;*/
+    font-size: 30px;
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+#instruction:active {
+    top:634px;
+    box-shadow: 0px 0px black;
+}
+
+#sound {
+    background-color: yellow;
+    position: absolute;
+    top: 632px;
+    left: 170px;
+    box-shadow: 3px 3px black;
+    cursor: pointer;
+}
+
+#sound:active {
+    top:634px;
+    box-shadow: 0px 0px black;
+}
+
+/*------------------------------------------------*/
+#gameContent {
+/*    background-color: red;*/
+    width: 100%;
+    height: 100%;
+}
+
