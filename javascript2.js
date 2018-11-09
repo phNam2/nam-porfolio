@@ -7,6 +7,7 @@ document.getElementById("all1").onclick = function() {
     show("back");
     show("project1");
     document.getElementById("works").style.background = "#9b0c0c";
+    document.getElementById("works").style.height = "600px";
 }
 
 document.getElementById("all2").onclick = function() {
@@ -14,6 +15,7 @@ document.getElementById("all2").onclick = function() {
     show("back");
     show("project2");
     document.getElementById("works").style.background = "#9b0c0c";
+    document.getElementById("works").style.height = "820px";
     vid = 1;
 }
 
@@ -22,6 +24,7 @@ document.getElementById("all3").onclick = function() {
     show("back");
     show("project3");
     document.getElementById("works").style.background = "#9b0c0c";
+    document.getElementById("works").style.height = "700px";
 }
 
 document.getElementById("all4").onclick = function() {
@@ -29,6 +32,7 @@ document.getElementById("all4").onclick = function() {
     show("back");
     show("project4");
     document.getElementById("works").style.background = "#9b0c0c";
+    document.getElementById("works").style.height = "820px";
     vid = 2;
 }
 
@@ -40,6 +44,7 @@ document.getElementById("back").onclick = function() {
     hide("project3");
     hide("project4");
     document.getElementById("works").style.background = "radial-gradient(#0a1187, #4c43cc)";
+    document.getElementById("works").style.height = "800px";
     
     
     if (vid ==1) {
