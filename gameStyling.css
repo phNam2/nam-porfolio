@@ -43,6 +43,7 @@ body {
     border-style: inset;
     border-width: 10px;
     border-color: #b213aa;
+    height: 53%;
 }
 
 #point {
