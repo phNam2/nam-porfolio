@@ -31,7 +31,7 @@ body {
     width: 230px;
     height: 60px;
     background-color: yellow;
-    margin: 20px auto;
+    margin: 0px auto;
     font-family: cursive;
     font-size: 20px;
     line-height: 2.8;
@@ -54,4 +54,75 @@ body {
     font-size: 20px;
     line-height: 2.8;
     border-radius: 20px;
+}
+
+#time {
+    width: 200px;
+    height: 50px;
+    background-color: #087008;
+    margin: 20px auto;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 2.5;
+    border-radius: 20px;
+}
+
+#live {
+    width: 250px;
+    height: 50px;
+    margin: auto;
+    background-color: #1185dd;
+}
+
+#buttons {
+    width: 280px;
+    height: 66px;
+    margin: 30px auto 10px;
+    font-family: cursive;
+}
+
+#main {
+    width: 75px;
+    height: 40px;
+    position: absolute;
+    top: 580px;
+    left: 20px;
+    line-height: 2.3;
+    border-radius: 20px;
+    background-color: #f76f6f;
+    box-shadow: 0px 2px black;
+    cursor: pointer;
+}
+
+#main:hover {
+    background-color: white;
+}
+
+#main:active {
+    top: 582px;
+    box-shadow: 0px 0px black;
+}
+
+#StartReset{
+    width: 155px;
+    height: 40px;
+    position: absolute;
+    top: 580px;
+    left: 120px;
+    line-height: 2.3;
+    border-radius: 20px;
+    background-color: #d31313;
+    box-shadow: 0px 2px black;
+    cursor: pointer;
+    color: white;
+}
+
+#StartReset:hover {
+    background-color: yellow;
+    color: black;
+}
+
+#StartReset:active {
+    top: 582px;
+    box-shadow: 0px 0px black;
 }
