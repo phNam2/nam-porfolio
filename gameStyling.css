@@ -172,7 +172,7 @@ body {
 #win {
     width: 600px;
     height: 200px;
-    background: linear-gradient(red, #e04343);
+    background: linear-gradient(#cd09f4, #6a107c);
     position: absolute;
     text-align: center;
     font-family: cursive;
@@ -188,7 +188,7 @@ body {
 #lose{
     width: 600px;
     height: 400px;
-    background: linear-gradient(#cd09f4, #6a107c);
+    background: linear-gradient(#054656, #0882a0);
     position: absolute;
     text-align: center;
     font-family: cursive;
@@ -199,5 +199,5 @@ body {
     line-height: 2;
     color: aliceblue;
     padding: 20px;
-    
+    display: none;
 }
