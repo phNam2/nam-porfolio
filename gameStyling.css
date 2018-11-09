@@ -16,13 +16,23 @@ body {
 
 #enemy {
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: aqua;
 }
 
 #ship {
-    margin-top: 20px;
+    margin-top 20px;
 }
 
 #enemyLeft {
-/*    width: 200px;*/
+    width: 230px;
     height: 60px;
+    background-color: yellow;
+    margin: 20px auto;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 2.8;
 }
