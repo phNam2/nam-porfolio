@@ -21,6 +21,7 @@ body {
     border-style: inset;
     border-width: 10px;
     border-color: aqua;
+    height: 47%;
 }
 
 #ship {
@@ -60,12 +61,13 @@ body {
 #time {
     width: 200px;
     height: 50px;
-    background-color: #087008;
+    background-color: black;
     margin: 20px auto;
     font-family: cursive;
     font-size: 20px;
     line-height: 2.5;
     border-radius: 20px;
+    color: aliceblue;
 }
 
 #live {
@@ -119,7 +121,7 @@ body {
 }
 
 #StartReset:hover {
-    background-color: yellow;
+    background-color: #119b33;
     color: black;
 }
 
@@ -200,4 +202,10 @@ body {
     color: aliceblue;
     padding: 20px;
     display: none;
+}
+
+#animation {
+    background-color: black;
+    width: 100%;
+    height: 100%;
 }
