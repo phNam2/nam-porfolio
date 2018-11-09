@@ -6,3 +6,23 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+#sidelines {
+    background-color: #514e4e;
+    height: 100%;
+    width: 300px;
+    position: absolute;        
+}
+
+#enemy {
+    text-align: center;
+}
+
+#ship {
+    margin-top: 20px;
+}
+
+#enemyLeft {
+/*    width: 200px;*/
+    height: 60px;
+}
