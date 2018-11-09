@@ -36,3 +36,22 @@ body {
     font-size: 20px;
     line-height: 2.8;
 }
+
+#us{
+    text-align: center;
+    padding-bottom: 10px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: #b213aa;
+}
+
+#point {
+    width: 160px;
+    height: 60px;
+    background-color: #ce7604;
+    margin: 20px auto;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 2.8;
+    border-radius: 20px;
+}
