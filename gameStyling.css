@@ -133,7 +133,7 @@ body {
     height: 40px;
     background-color: yellow;
     position: absolute;
-    top: 633px;
+    top: 632px;
     left: 60px;
     border-radius: 20px;
     box-shadow: 0px 2px black;
@@ -144,6 +144,20 @@ body {
 }
 
 #instruction:active {
-    top:635px;
+    top:634px;
+    box-shadow: 0px 0px black;
+}
+
+#sound {
+    background-color: yellow;
+    position: absolute;
+    top: 632px;
+    left: 170px;
+    box-shadow: 3px 3px black;
+    cursor: pointer;
+}
+
+#sound:active {
+    top:634px;
     box-shadow: 0px 0px black;
 }
