@@ -1,4 +1,7 @@
 var playing = false;
+var score;
+var liveLeft;
+var timeRemaining;
 
 document.getElementById("StartReset").onclick = function() {
     
@@ -9,7 +12,53 @@ document.getElementById("StartReset").onclick = function() {
     else {
         playing = true;
         
+        // The number of enemy ships
         
-        $('#StartReset').html("Reset");   
+        
+        // Make the scoreboard appear
+        score = 0;
+        $("#score").html(score);
+        
+        $('#StartReset').html("Reset"); 
+        
+        // show the "Lives box"
+//            $("#lives").show();
+        liveLeft = 3;
+        addHearts();
+        
+        // Add the time inside the game
+        timeRemaining = 200;
+        $("#seconds").html(timeRemaining);
+        startCounting();
     }
 }
+
+// Give the heart image on the health bar
+function addHearts() {
+    $("#live").empty();
+    for(i=0; i<liveLeft ; i++) {
+        $("#live").append('<img src="image/game/heart.gif" class="life">');
+    }
+} 
+
+// Start the counting clock for the game
+function startCounting(){
+    actionTime = setInterval(function(){
+        timeRemaining -= 1;
+        $("#seconds").html(timeRemaining);
+        if (timeRemaining <= 0) {
+            
+            $(".score").html(score);
+            gameOver();
+        }
+    }, 1000);
+}
+ // Stop the counting clock when the game is end 
+function stopCounting() {
+    clearInterval(actionTime);
+}
+ // When the game is over
+function gameOver() {
+    
+    stopCounting();
+} 
