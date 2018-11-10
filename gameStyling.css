@@ -5,6 +5,13 @@ body {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    min-width: 1000px;
+    min-height: 695px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
 }
 
 #sidelines {
@@ -12,6 +19,8 @@ body {
     height: 100%;
     width: 300px;
     position: absolute;        
+    min-width: 300px;
+    min-height: 695px;
 }
 
 #enemy {
@@ -19,7 +28,7 @@ body {
     padding-top: 20px;
     padding-bottom: 10px;
     border-style: inset;
-    border-width: 10px;
+    border-width: 7px;
     border-color: aqua;
     height: 47%;
 }
@@ -42,9 +51,10 @@ body {
     text-align: center;
     padding-bottom: 10px;
     border-style: inset;
-    border-width: 10px;
+    border-width: 7px;
     border-color: #b213aa;
     height: 53%;
+
 }
 
 #point {
@@ -208,4 +218,6 @@ body {
     background-color: black;
     width: 100%;
     height: 100%;
+    
+    display: none;
 }
