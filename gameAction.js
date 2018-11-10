@@ -29,7 +29,7 @@ document.getElementById("StartReset").onclick = function() {
         addHearts();
         
         // Add the time inside the game
-        timeRemaining = 200;
+        timeRemaining = 190;
         $("#seconds").html(timeRemaining);
         startCounting();
         
@@ -56,6 +56,7 @@ function startCounting(){
         $("#seconds").html(timeRemaining);
         if (timeRemaining <= 0) {
             
+            $("#kaboom")[0].play();
             $(".score").html(score);
             gameOver();
         }
