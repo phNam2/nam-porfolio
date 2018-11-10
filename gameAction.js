@@ -62,6 +62,7 @@ function startCounting(){
         }
     }, 1000);
 }
+
  // Stop the counting clock when the game is end 
 function stopCounting() {
     clearInterval(actionTime);
@@ -69,5 +70,10 @@ function stopCounting() {
  // When the game is over
 function gameOver() {
     
+    document.getElementById("song").pause();
     stopCounting();
 } 
+
+
+
+
