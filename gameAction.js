@@ -5,9 +5,14 @@ var liveLeft;
 var timeRemaining;
 
 // Object wall
-var actionWall1;
-var wall1Pos;
-var headWall1;
+function wall (id, postion, headTo) {
+    
+    this.wallID = id;
+    this.actionWall = null;
+    this.wallPos = postion;
+    this.headTo = headTo;
+}
+
 
 document.getElementById("StartReset").onclick = function() {
     
@@ -42,7 +47,11 @@ document.getElementById("StartReset").onclick = function() {
         $("#song")[0].play();
         
         // Start the content
-        movingWall1();
+        var wall1 = new wall("#wall1", 90, "right");
+        movingWall1(wall1);
+        
+        var wall2 = new wall("#wall2", 780, "left");
+        movingWall1(wall2);
     }
 }
 
@@ -79,24 +88,22 @@ function gameOver() {
     stopCounting();
 } 
 
-function movingWall1(){
-    wall1Pos = 90;
-    headWall1 = "right";
-    actionWall1 = setInterval(function(){
-        if (headWall1 == "right") {
-            if ( (wall1Pos + 1) > 780) {
-                headWall1 = "left";
+function movingWall1(wall){
+    wall.actionWall = setInterval(function(){
+        if (wall.headTo == "right") {
+            if ( (wall.wallPos + 1) > 780) {
+                wall.headTo = "left";
             } else {
-                wall1Pos += 1;
-                $("#wall1").css('left', wall1Pos);
+                wall.wallPos += 1;
+                $(wall.wallID).css('left', wall.wallPos);
             }
         }
-        if (headWall1 == "left") {
-            if ( (wall1Pos - 1) < 90) {
-                headWall1 = "right";
+        if (wall.headTo == "left") {
+            if ( (wall.wallPos - 1) < 90) {
+                wall.headTo = "right";
             } else {
-                wall1Pos -= 1;
-                $("#wall1").css('left', wall1Pos);
+                wall.wallPos -= 1;
+                $(wall.wallID).css('left', wall.wallPos);
             }
         }
     }, 10);
