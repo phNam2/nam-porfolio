@@ -228,3 +228,14 @@ body {
     max-height: 695px;
 /*    display: none;*/
 }
+
+#rock1 {
+    position:absolute;
+    top:637px;
+}
+
+#rock2 {
+    position:absolute;
+    top:637px;
+    right: 0px;
+}
