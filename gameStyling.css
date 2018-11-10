@@ -21,6 +21,7 @@ body {
     position: absolute;        
     min-width: 300px;
     min-height: 695px;
+    max-height: 695px;
 }
 
 #enemy {
@@ -217,8 +218,13 @@ body {
 
 #animation {
     background-color: black;
-    width: 100%;
+    width: 78%;
     height: 100%;
-    
-    display: none;
+    position: absolute;
+    left: 300px;
+    min-width: 1065px;
+    max-width: 1065px;
+    min-height: 695px;
+    max-height: 695px;
+/*    display: none;*/
 }
