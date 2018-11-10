@@ -20,6 +20,16 @@ function tank (pos) {
 }
 var tankGo = new tank(90);
 
+// Object bullet
+var available = true;
+function bullet (type, speed, x, y) {
+    this.type = type;
+    this.speed = speed;
+    this.xAxis = x;
+    this.yAxis = y;
+}
+var bulletGo = new bullet(1, 3, tankGo.tankPos, 600);
+
 document.getElementById("StartReset").onclick = function() {
     
     if (playing == true) {
@@ -130,6 +140,11 @@ window.addEventListener('keydown', function (e) {
             tankGo.tankPos += 6;
             $("#tank").css('left', tankGo.tankPos);
         }
+    }
+    
+    // Fire gun
+    if (e.keyCode == 99) {
+        fire();
     }
 });
 
