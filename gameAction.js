@@ -1,4 +1,5 @@
 var playing = false;
+var ships;
 var score;
 var liveLeft;
 var timeRemaining;
@@ -13,7 +14,8 @@ document.getElementById("StartReset").onclick = function() {
         playing = true;
         
         // The number of enemy ships
-        
+        ships = 20;
+        $("#number").html(ships);
         
         // Make the scoreboard appear
         score = 0;
@@ -30,6 +32,12 @@ document.getElementById("StartReset").onclick = function() {
         timeRemaining = 200;
         $("#seconds").html(timeRemaining);
         startCounting();
+        
+        //Play music
+        $("#song")[0].play();
+        
+        // Start the content
+        
     }
 }
 
