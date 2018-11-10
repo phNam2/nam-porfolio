@@ -252,3 +252,8 @@ body {
     left: 780px; 
 }
 
+#tank{
+    position:absolute;
+    top:645px;
+    left: 90px;
+}
