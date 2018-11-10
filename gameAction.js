@@ -22,13 +22,14 @@ var tankGo = new tank(90);
 
 // Object bullet
 var available = true;
-function bullet (type, speed, x, y) {
+function bullet (id, type, speed, x, y) {
+    this.id = id;
     this.type = type;
     this.speed = speed;
     this.xAxis = x;
     this.yAxis = y;
 }
-var bulletGo = new bullet(1, 3, tankGo.tankPos, 600);
+var bulletGo = new bullet("#bullet1", 1, 3, tankGo.tankPos, 600);
 
 document.getElementById("StartReset").onclick = function() {
     
