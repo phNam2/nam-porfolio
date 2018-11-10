@@ -92,7 +92,7 @@ body {
 #buttons {
     width: 280px;
     height: 66px;
-    margin: 30px auto 40px;
+    margin: 20px auto 40px;
     font-family: cursive;
     position: relative;
 }
@@ -146,8 +146,8 @@ body {
     height: 40px;
     background-color: yellow;
     position: absolute;
-    top: 50px;
-    left: 60px;
+    top: 60px;
+    left: 110px;
     border-radius: 20px;
     box-shadow: 0px 2px black;
     cursor: pointer;
@@ -157,10 +157,11 @@ body {
 }
 
 #instruction:active {
-    top:52px;
+    top:62px;
     box-shadow: 0px 0px black;
 }
 
+/*
 #sound {
     background-color: yellow;
     position: absolute;
@@ -174,6 +175,7 @@ body {
     top:52px;
     box-shadow: 0px 0px black;
 }
+*/
 
 /*------------------------------------------------*/
 #gameContent {
