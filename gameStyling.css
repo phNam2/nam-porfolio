@@ -35,6 +35,7 @@ body {
 
 #ship {
     margin-top 20px;
+    width: 280px; 
 }
 
 #enemyLeft {
