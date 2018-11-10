@@ -13,6 +13,12 @@ function wall (id, postion, headTo) {
     this.headTo = headTo;
 }
 
+// Object tank
+function tank (pos) {
+    
+    this.tankPos = pos;
+}
+var tankGo = new tank(90);
 
 document.getElementById("StartReset").onclick = function() {
     
@@ -109,5 +115,22 @@ function movingWall1(wall){
     }, 10);
 }
 
+
+window.addEventListener('keydown', function (e) {
+    // go to the left
+    if (e.keyCode == 37) {
+        if ( tankGo.tankPos-6 > 90) {
+            tankGo.tankPos -= 6;
+            $("#tank").css('left', tankGo.tankPos);
+        }
+    }
+    // go to the right
+    if (e.keyCode == 39) {
+        if ( tankGo.tankPos+6 < 954) {
+            tankGo.tankPos += 6;
+            $("#tank").css('left', tankGo.tankPos);
+        }
+    }
+});
 
 
