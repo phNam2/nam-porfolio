@@ -4,8 +4,8 @@ body {
     height: 100%;
     width: 100%;
     background-position: center;
-    background-repeat: no-repeat;
-    min-width: 1000px;
+/*    background-repeat: no-repeat;*/
+    min-width: 1070px;
     min-height: 695px;
 }
 
@@ -220,14 +220,10 @@ body {
 
 #animation {
     background-color: black;
-    width: 78%;
-    height: 100%;
     position: absolute;
     left: 300px;
-    min-width: 1065px;
-    max-width: 1065px;
-    min-height: 695px;
-    max-height: 695px;
+    width: 1065px;
+    height: 695px;
 /*    display: none;*/
 }
 
