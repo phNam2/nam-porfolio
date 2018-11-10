@@ -12,6 +12,8 @@ function wall (id, postion, headTo) {
     this.wallPos = postion;
     this.headTo = headTo;
 }
+var wall1;
+var wall2;
 
 // Object tank
 function tank (pos) {
@@ -64,10 +66,10 @@ document.getElementById("StartReset").onclick = function() {
         $("#song")[0].play();
         
         // Start the content
-        var wall1 = new wall("#wall1", 90, "right");
+        wall1 = new wall("#wall1", 90, "right");
         movingWall1(wall1);
         
-        var wall2 = new wall("#wall2", 780, "left");
+        wall2 = new wall("#wall2", 780, "left");
         movingWall1(wall2);
     }
 }
@@ -101,6 +103,8 @@ function stopCounting() {
  // When the game is over
 function gameOver() {
     
+    clearInterval(wall1.actionWall);
+    clearInterval(wall2.actionWall);
     document.getElementById("song").pause();
     stopCounting();
 } 
