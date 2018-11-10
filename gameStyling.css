@@ -5,6 +5,13 @@ body {
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    min-width: 1000px;
+    min-height: 695px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
 }
 
 #sidelines {
@@ -12,6 +19,9 @@ body {
     height: 100%;
     width: 300px;
     position: absolute;        
+    min-width: 300px;
+    min-height: 695px;
+    max-height: 695px;
 }
 
 #enemy {
@@ -19,12 +29,14 @@ body {
     padding-top: 20px;
     padding-bottom: 10px;
     border-style: inset;
-    border-width: 10px;
+    border-width: 7px;
     border-color: aqua;
+    height: 47%;
 }
 
 #ship {
     margin-top 20px;
+    width: 280px; 
 }
 
 #enemyLeft {
@@ -41,9 +53,10 @@ body {
     text-align: center;
     padding-bottom: 10px;
     border-style: inset;
-    border-width: 10px;
+    border-width: 7px;
     border-color: #b213aa;
     height: 53%;
+
 }
 
 #point {
@@ -60,12 +73,13 @@ body {
 #time {
     width: 200px;
     height: 50px;
-    background-color: #087008;
+    background-color: black;
     margin: 20px auto;
     font-family: cursive;
     font-size: 20px;
     line-height: 2.5;
     border-radius: 20px;
+    color: aliceblue;
 }
 
 #live {
@@ -78,15 +92,15 @@ body {
 #buttons {
     width: 280px;
     height: 66px;
-    margin: 30px auto 10px;
+    margin: 30px auto 40px;
     font-family: cursive;
+    position: relative;
 }
 
 #main {
     width: 75px;
     height: 40px;
     position: absolute;
-    top: 580px;
     left: 20px;
     line-height: 2.3;
     border-radius: 20px;
@@ -100,7 +114,7 @@ body {
 }
 
 #main:active {
-    top: 582px;
+    top: 2px;
     box-shadow: 0px 0px black;
 }
 
@@ -108,7 +122,6 @@ body {
     width: 155px;
     height: 40px;
     position: absolute;
-    top: 580px;
     left: 120px;
     line-height: 2.3;
     border-radius: 20px;
@@ -119,12 +132,12 @@ body {
 }
 
 #StartReset:hover {
-    background-color: yellow;
+    background-color: #119b33;
     color: black;
 }
 
 #StartReset:active {
-    top: 582px;
+    top: 2px;
     box-shadow: 0px 0px black;
 }
 
@@ -133,7 +146,7 @@ body {
     height: 40px;
     background-color: yellow;
     position: absolute;
-    top: 632px;
+    top: 50px;
     left: 60px;
     border-radius: 20px;
     box-shadow: 0px 2px black;
@@ -144,21 +157,21 @@ body {
 }
 
 #instruction:active {
-    top:634px;
+    top:52px;
     box-shadow: 0px 0px black;
 }
 
 #sound {
     background-color: yellow;
     position: absolute;
-    top: 632px;
+    top: 50px;
     left: 170px;
     box-shadow: 3px 3px black;
     cursor: pointer;
 }
 
 #sound:active {
-    top:634px;
+    top:52px;
     box-shadow: 0px 0px black;
 }
 
@@ -169,3 +182,60 @@ body {
     height: 100%;
 }
 
+
+#win {
+    width: 600px;
+    height: 200px;
+    background: linear-gradient(#cd09f4, #6a107c);
+    position: absolute;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 30px;
+    top: 200px;
+    left: 550px;
+    font-size: 40px;
+    line-height: 2;
+    color: aliceblue;
+    display: none;
+}
+
+#lose{
+    width: 600px;
+    height: 400px;
+    background: linear-gradient(#054656, #0882a0);
+    position: absolute;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 30px;
+    top: 150px;
+    left: 550px;
+    font-size: 40px;
+    line-height: 2;
+    color: aliceblue;
+    padding: 20px;
+    display: none;
+}
+
+#animation {
+    background-color: black;
+    width: 78%;
+    height: 100%;
+    position: absolute;
+    left: 300px;
+    min-width: 1065px;
+    max-width: 1065px;
+    min-height: 695px;
+    max-height: 695px;
+/*    display: none;*/
+}
+
+#rock1 {
+    position:absolute;
+    top:637px;
+}
+
+#rock2 {
+    position:absolute;
+    top:637px;
+    right: 0px;
+}

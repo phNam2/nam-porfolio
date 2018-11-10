@@ -12,14 +12,14 @@
 <body>
     <div id="sidelines">
         <div id="enemy">
-            <img src="image/game/ship_2QgFMQ.png" alt="Italian Trulli" width="280px" id="ship">
+            <img src="image/game/ship_2QgFMQ.png" alt="Italian Trulli" id="ship">
             <div id="enemyLeft">
                 <p><strong>Alien ships left:</strong> <span id="number">20</span></p>
             </div>
         </div>
         <div id="us">
             <div id="point">
-                <p><strong>Score:</strong> <span id="score">0</span></p>
+                <p><strong>Score:</strong> <span class="score" >0</span></p>
             </div>
             <div id="time">
                 <p><strong>Time left:</strong> <span id="score">200</span></p>
@@ -45,19 +45,22 @@
     </div>
     
     <div id="gameContent">
+       <div id="animation">
+            <img src="image/game/rock_1KRWVS.png" alt="Italian Trulli" width="80px" id="rock1">
+            <img src="image/game/rock_1KRWVS.png" alt="Italian Trulli" width="80px" id="rock2">
+       </div>
+       
        <div id="howTo">
            
        </div>
        <div id="win">
-           
+          <p>Congratulations!!</p>
+           <p>Your score is: <span class="score">0</span></p>
        </div>
        
        <div id="lose">
-           
-       </div>
-        
-       <div id="animation">
-            
+           <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" width="300px" id="turn">
+           <p>MUAHAHAHA!! You puny human loose.</p>
        </div>
     </div>
     
@@ -65,6 +68,16 @@
     <audio id="song">
       <source src="song/Lacrimosa.ogg" type="audio/ogg">
       <source src="song/Lacrimosa.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="kaboom">
+      <source src="song/megumin.ogg" type="audio/ogg">
+      <source src="song/megumin.mp3" type="audio/mpeg">
+    </audio>
+       
+    <audio id="continue">
+      <source src="song/continue.ogg" type="audio/ogg">
+      <source src="song/continue.mp3" type="audio/mpeg">
     </audio>
         
 <!-------------------------------------------------------------------------------------------------------------------------------------------------->
