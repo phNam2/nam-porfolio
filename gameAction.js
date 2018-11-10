@@ -119,7 +119,7 @@ function movingWall1(wall){
 window.addEventListener('keydown', function (e) {
     // go to the left
     if (e.keyCode == 37) {
-        if ( tankGo.tankPos-6 > 90) {
+        if ( tankGo.tankPos-6 > 89) {
             tankGo.tankPos -= 6;
             $("#tank").css('left', tankGo.tankPos);
         }
