@@ -94,7 +94,7 @@ function movingWall1(wall){
             if ( (wall.wallPos + 1) > 780) {
                 wall.headTo = "left";
             } else {
-                wall.wallPos += 1;
+                wall.wallPos += 1.5;
                 $(wall.wallID).css('left', wall.wallPos);
             }
         }
@@ -102,7 +102,7 @@ function movingWall1(wall){
             if ( (wall.wallPos - 1) < 90) {
                 wall.headTo = "right";
             } else {
-                wall.wallPos -= 1;
+                wall.wallPos -= 1.5;
                 $(wall.wallID).css('left', wall.wallPos);
             }
         }
