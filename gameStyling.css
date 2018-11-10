@@ -263,4 +263,5 @@ body {
 
 .bul {
     display: none;
+    position: absolute;
 }

@@ -22,14 +22,14 @@ var tankGo = new tank(90);
 
 // Object bullet
 var available = true;
-function bullet (id, type, speed, x, y) {
+function bullet (id, type, speed, y) {
     this.id = id;
     this.type = type;
     this.speed = speed;
-    this.xAxis = x;
     this.yAxis = y;
+    this.actionBullet = null;
 }
-var bulletGo = new bullet("#bullet1", 1, 3, tankGo.tankPos, 600);
+var bulletGo = new bullet("#bullet1", 1, 3, 600);
 
 document.getElementById("StartReset").onclick = function() {
     
@@ -144,9 +144,15 @@ window.addEventListener('keydown', function (e) {
     }
     
     // Fire gun
-    if (e.keyCode == 99) {
-        fire();
+    if (e.keyCode == 67) {
+        if (available==true) {
+            available=false;
+            fire();    
+        }
     }
 });
 
-
+function fire() {
+    $(bulletGo.id).show();
+    $(bulletGo.id).css({'left':tankGo.tankPos+10, 'top':bulletGo.yAxis});
+}
