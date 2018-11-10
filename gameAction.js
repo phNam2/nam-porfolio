@@ -4,6 +4,11 @@ var score;
 var liveLeft;
 var timeRemaining;
 
+// Object wall
+var actionWall1;
+var wall1Pos;
+var headWall1;
+
 document.getElementById("StartReset").onclick = function() {
     
     if (playing == true) {
@@ -37,7 +42,7 @@ document.getElementById("StartReset").onclick = function() {
         $("#song")[0].play();
         
         // Start the content
-        
+        movingWall1();
     }
 }
 
@@ -74,6 +79,28 @@ function gameOver() {
     stopCounting();
 } 
 
+function movingWall1(){
+    wall1Pos = 90;
+    headWall1 = "right";
+    actionWall1 = setInterval(function(){
+        if (headWall1 == "right") {
+            if ( (wall1Pos + 1) > 780) {
+                headWall1 = "left";
+            } else {
+                wall1Pos += 1;
+                $("#wall1").css('left', wall1Pos);
+            }
+        }
+        if (headWall1 == "left") {
+            if ( (wall1Pos - 1) < 90) {
+                headWall1 = "right";
+            } else {
+                wall1Pos -= 1;
+                $("#wall1").css('left', wall1Pos);
+            }
+        }
+    }, 10);
+}
 
 
 
