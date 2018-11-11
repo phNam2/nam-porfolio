@@ -40,12 +40,7 @@ function asteroid(id) {
     this.asID = id;
     this.meteAction = null;
 }
-var asteroid1;
-var asteroid2;
-var asteroid3;
-var asteroid4;
-var asteroid5;
-var asteroid6;
+var asteroids=[];
 
 
 // Start the game
@@ -72,12 +67,11 @@ document.getElementById("StartReset").onclick = function() {
         $('#StartReset').html("Reset"); 
         
         // show the "Lives box"
-//            $("#lives").show();
         liveLeft = 3;
         addHearts();
         
         // Add the time inside the game
-        timeRemaining = 190;
+        timeRemaining = 10;
         $("#seconds").html(timeRemaining);
         startCounting();
         
@@ -99,27 +93,32 @@ document.getElementById("StartReset").onclick = function() {
         bulletGo = new bullet("#bullet1", 1, 3, 600);
         
         // The asteroids original content
-        asteroid1 = new asteroid("#as1");
-        movingAsteroids(asteroid1);
+        var asteroid1 = new asteroid("#as1");
+        asteroids.push(asteroid1);
+        movingAsteroids(asteroids[0]);
         
         var timeout2 = setTimeout(function(){
-            asteroid2 = new asteroid("#as2");
-            movingAsteroids(asteroid2);
+            asteroid1 = new asteroid("#as2");
+            asteroids.push(asteroid1);
+            movingAsteroids(asteroids[1]);
         }, 2000);
         
         var timeout3 = setTimeout(function(){
-            asteroid3 = new asteroid("#as3");
-            movingAsteroids(asteroid3);
+            asteroid1 = new asteroid("#as3");
+            asteroids.push(asteroid1);
+            movingAsteroids(asteroids[2]);
         }, 5000);
         
         var timeout4 = setTimeout(function(){
-            asteroid4 = new asteroid("#as4");
-            movingAsteroids(asteroid4);
+            asteroid1 = new asteroid("#as4");
+            asteroids.push(asteroid1);
+            movingAsteroids(asteroids[3]);
         }, 70000);
         
         var timeout5 = setTimeout(function(){
-            asteroid5 = new asteroid("#as5");
-            movingAsteroids(asteroid5);
+            asteroid1 = new asteroid("#as5");
+            asteroids.push(asteroid1);
+            movingAsteroids(asteroids[4]);
         }, 140000);
     }
 }
@@ -165,8 +164,9 @@ function gameOver() {
     $(bulletGo.id).hide();
     
     // Stop all the other asteroids
-    for (i=1; i<6; i++) {
-        
+    for (i=0; i<5; i++) {
+        clearInterval(asteroids[i].meteAction);
+        $(asteroids[i].asID).hide();
     }
     
 //    if (ending=="lose") {
