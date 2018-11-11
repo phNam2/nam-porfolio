@@ -216,7 +216,7 @@ function fire() {
 // The action for the asteroids
 function movingAsteroids(meteorite) {
     $(meteorite.asID).show();
-    var asX = Math.floor((Math.random() * 850) + 89);
+    var asX = Math.floor((Math.random() * 860) + 70);
     var asY = -70;
     $(meteorite.asID).css({'left':asX, 'top':asY});
     
