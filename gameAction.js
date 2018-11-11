@@ -43,6 +43,7 @@ var asteroid2;
 var asteroid3;
 var asteroid4;
 var asteroid5;
+var asteroid6;
 
 
 // Start the game
