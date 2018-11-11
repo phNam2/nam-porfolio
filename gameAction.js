@@ -112,12 +112,12 @@ document.getElementById("StartReset").onclick = function() {
         var timeout4 = setTimeout(function(){
             asteroid4 = new asteroid("#as4");
             movingAsteroids(asteroid4);
-        }, 10000);
+        }, 70000);
         
         var timeout5 = setTimeout(function(){
             asteroid5 = new asteroid("#as5");
             movingAsteroids(asteroid5);
-        }, 15000);
+        }, 140000);
     }
 }
 
