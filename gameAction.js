@@ -41,7 +41,7 @@ function asteroid(id) {
     this.meteAction = null;
 }
 var asteroids=[];
-
+var asteroid6;
 
 // Start the game
 document.getElementById("StartReset").onclick = function() {
@@ -71,7 +71,7 @@ document.getElementById("StartReset").onclick = function() {
         addHearts();
         
         // Add the time inside the game
-        timeRemaining = 10;
+        timeRemaining = 190;
         $("#seconds").html(timeRemaining);
         startCounting();
         
@@ -138,7 +138,6 @@ function startCounting(){
         $("#seconds").html(timeRemaining);
         if (timeRemaining <= 0) {
             
-            $("#kaboom")[0].play();
             $(".score").html(score);
             ending = "lose";
             gameOver();
@@ -169,29 +168,30 @@ function gameOver() {
         $(asteroids[i].asID).hide();
     }
     
-//    if (ending=="lose") {
-//        asteroid6 = new asteroid("#as6");
-//        annihilate(meteorite);
-//    }
+    if (ending=="lose") {
+        asteroid6 = new asteroid("#as6");
+        annihilate(asteroid6);
+    }
 } 
 
-//function annihilate(asteroid6){
-//    $(meteorite.asID).show();
-//    var asX = Math.floor((Math.random() * 840) + 70);
-//    var asY = -70;
-//    $(meteorite.asID).css({'left':asX, 'top':asY});
-//    
-//     meteorite.meteAction = setInterval(function(){
-//        asY += Math.floor((Math.random() * 2) + 1);
-//        $(meteorite.asID).css('top', asY);
-//        //Is the fruit too low?
-//        if (asY >635) {
-//            clearInterval(meteorite.meteAction);
-//            $(meteorite.asID).hide();
-//            movingAsteroids(meteorite);
-//        }
-//    }, 10);
-//}
+
+// End game and the last asteroid destroy everything
+function annihilate(meteorite){
+    $(meteorite.asID).show();
+    var asX = 200;
+    var asY = -150;
+    $(meteorite.asID).css({'left':asX, 'top':asY});
+    
+     meteorite.meteAction = setInterval(function(){
+        asY += 3;
+        $(meteorite.asID).css('top', asY);
+        if (asY >250) {
+            $("#kaboom")[0].play();
+            $("#animation").hide();
+//            document.getElementById("kaboom").pause();
+        }
+    }, 10);
+}
 
 function movingWall1(wall){
     wall.actionWall = setInterval(function(){
