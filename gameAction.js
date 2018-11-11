@@ -4,6 +4,8 @@ var score;
 var liveLeft;
 var timeRemaining;
 
+var ending;
+
 // Object wall
 function wall (id, postion, headTo) {
     
@@ -139,6 +141,7 @@ function startCounting(){
             
             $("#kaboom")[0].play();
             $(".score").html(score);
+            ending = "lose";
             gameOver();
         }
     }, 1000);
@@ -151,13 +154,44 @@ function stopCounting() {
  // When the game is over
 function gameOver() {
     
+    document.getElementById("song").pause();
+    playing = false;
+    stopCounting();
     clearInterval(wall1.actionWall);
     clearInterval(wall2.actionWall);
+    
+    // Stop the bullet motion
     clearInterval(bulletGo.actionBullet);
-    document.getElementById("song").pause();
-    stopCounting();
-    playing = false;
+    $(bulletGo.id).hide();
+    
+    // Stop all the other asteroids
+    for (i=1; i<6; i++) {
+        
+    }
+    
+//    if (ending=="lose") {
+//        asteroid6 = new asteroid("#as6");
+//        annihilate(meteorite);
+//    }
 } 
+
+//function annihilate(asteroid6){
+//    $(meteorite.asID).show();
+//    var asX = Math.floor((Math.random() * 840) + 70);
+//    var asY = -70;
+//    $(meteorite.asID).css({'left':asX, 'top':asY});
+//    
+//     meteorite.meteAction = setInterval(function(){
+//        asY += Math.floor((Math.random() * 2) + 1);
+//        $(meteorite.asID).css('top', asY);
+//        //Is the fruit too low?
+//        if (asY >635) {
+//            clearInterval(meteorite.meteAction);
+//            $(meteorite.asID).hide();
+//            movingAsteroids(meteorite);
+//        }
+//    }, 10);
+//}
 
 function movingWall1(wall){
     wall.actionWall = setInterval(function(){
