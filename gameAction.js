@@ -42,6 +42,7 @@ var asteroid1;
 var asteroid2;
 var asteroid3;
 var asteroid4;
+var asteroid5;
 
 
 // Start the game
@@ -98,14 +99,25 @@ document.getElementById("StartReset").onclick = function() {
         asteroid1 = new asteroid("#as1");
         movingAsteroids(asteroid1);
         
-        asteroid2 = new asteroid("#as2");
-        movingAsteroids(asteroid2);
+        var timeout2 = setTimeout(function(){
+            asteroid2 = new asteroid("#as2");
+            movingAsteroids(asteroid2);
+        }, 2000);
         
-        asteroid3 = new asteroid("#as3");
-        movingAsteroids(asteroid3);
+        var timeout3 = setTimeout(function(){
+            asteroid3 = new asteroid("#as3");
+            movingAsteroids(asteroid3);
+        }, 5000);
         
-        asteroid4 = new asteroid("#as4");
-        movingAsteroids(asteroid4);
+        var timeout4 = setTimeout(function(){
+            asteroid4 = new asteroid("#as4");
+            movingAsteroids(asteroid4);
+        }, 10000);
+        
+        var timeout5 = setTimeout(function(){
+            asteroid5 = new asteroid("#as5");
+            movingAsteroids(asteroid5);
+        }, 15000);
     }
 }
 
@@ -221,7 +233,7 @@ function movingAsteroids(meteorite) {
     $(meteorite.asID).css({'left':asX, 'top':asY});
     
      meteorite.meteAction = setInterval(function(){
-        asY += 2;
+        asY += Math.floor((Math.random() * 4) + 1);;
         $(meteorite.asID).css('top', asY);
         //Is the fruit too low?
         if (asY >635) {
