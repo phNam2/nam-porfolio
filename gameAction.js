@@ -117,6 +117,7 @@ function gameOver() {
     
     clearInterval(wall1.actionWall);
     clearInterval(wall2.actionWall);
+    clearInterval(bulletGo.actionBullet);
     document.getElementById("song").pause();
     stopCounting();
     playing = false;
