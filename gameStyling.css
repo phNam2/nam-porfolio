@@ -273,3 +273,8 @@ body {
     display: none;
     position: absolute;
 }
+
+.asteroids {
+    display: none;
+    position: absolute;
+}
