@@ -99,10 +99,13 @@ document.getElementById("StartReset").onclick = function() {
         movingAsteroids(asteroid1);
         
         asteroid2 = new asteroid("#as2");
+        movingAsteroids(asteroid2);
         
         asteroid3 = new asteroid("#as3");
+        movingAsteroids(asteroid3);
         
         asteroid4 = new asteroid("#as4");
+        movingAsteroids(asteroid4);
     }
 }
 
@@ -213,7 +216,7 @@ function fire() {
 // The action for the asteroids
 function movingAsteroids(meteorite) {
     $(meteorite.asID).show();
-    var asX = Math.floor((Math.random() * 520) + 0);
+    var asX = Math.floor((Math.random() * 850) + 89);
     var asY = -70;
     $(meteorite.asID).css({'left':asX, 'top':asY});
     
@@ -221,6 +224,9 @@ function movingAsteroids(meteorite) {
         asY += 2;
         $(meteorite.asID).css('top', asY);
         //Is the fruit too low?
+        if (asY >635) {
+            $(meteorite.asID).hide();
+        }
         if (asY > 700) {
             clearInterval(meteorite.meteAction);
             movingAsteroids(meteorite);
