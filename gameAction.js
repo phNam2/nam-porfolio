@@ -44,6 +44,9 @@ document.getElementById("StartReset").onclick = function() {
     else {
         playing = true;
         
+        // Show the game content
+        $("#animation").show();
+        
         // The number of enemy ships
         ships = 20;
         $("#number").html(ships);
@@ -116,6 +119,7 @@ function gameOver() {
     clearInterval(wall2.actionWall);
     document.getElementById("song").pause();
     stopCounting();
+    playing = false;
 } 
 
 function movingWall1(wall){
@@ -142,14 +146,16 @@ function movingWall1(wall){
 
 window.addEventListener('keydown', function (e) {
     // go to the left
-    if (e.keyCode == 37) {
+    if (e.keyCode == 37 &&
+        playing == true) {
         if ( tankGo.tankPos-6 > 89) {
             tankGo.tankPos -= 6;
             $("#tank").css('left', tankGo.tankPos);
         }
     }
     // go to the right
-    if (e.keyCode == 39) {
+    if (e.keyCode == 39 &&
+        playing == true) {
         if ( tankGo.tankPos+6 < 954) {
             tankGo.tankPos += 6;
             $("#tank").css('left', tankGo.tankPos);
@@ -157,7 +163,8 @@ window.addEventListener('keydown', function (e) {
     }
     
     // Fire gun by pressing space
-    if (e.keyCode == 32) {
+    if (e.keyCode == 32 &&
+        playing == true) {
         if (available==true) {
             available=false;
             fire();    
