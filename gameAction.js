@@ -159,4 +159,15 @@ window.addEventListener('keydown', function (e) {
 function fire() {
     $(bulletGo.id).show();
     $(bulletGo.id).css({'left':tankGo.tankPos+10, 'top':bulletGo.yAxis});
+    
+     bulletGo.actionBullet = setInterval(function(){
+        bulletGo.yAxis -= bulletGo.speed;
+        $(bulletGo.id).css('top', bulletGo.yAxis);
+        //Is the fruit too low?
+        if (bulletGo.yAxis < -30) {
+            available=true;
+            clearInterval(bulletGo.actionBullet);
+            bulletGo.yAxis = 600;
+        }
+    }, 10);
 }
