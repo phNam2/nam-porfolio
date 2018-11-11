@@ -20,7 +20,7 @@ function tank (pos) {
     
     this.tankPos = pos;
 }
-var tankGo = new tank(90);
+var tankGo;
 
 // Object bullet
 var available = true;
@@ -31,8 +31,10 @@ function bullet (id, type, speed, y) {
     this.yAxis = y;
     this.actionBullet = null;
 }
-var bulletGo = new bullet("#bullet1", 1, 3, 600);
+var bulletGo; 
 
+
+// Start the game
 document.getElementById("StartReset").onclick = function() {
     
     if (playing == true) {
@@ -66,11 +68,18 @@ document.getElementById("StartReset").onclick = function() {
         $("#song")[0].play();
         
         // Start the content
+        // The wall content
         wall1 = new wall("#wall1", 90, "right");
         movingWall1(wall1);
         
         wall2 = new wall("#wall2", 780, "left");
         movingWall1(wall2);
+        
+        // The tank content
+        tankGo = new tank(90);
+        
+        // The bullet original content
+        bulletGo = new bullet("#bullet1", 1, 3, 600);
     }
 }
 
@@ -147,8 +156,8 @@ window.addEventListener('keydown', function (e) {
         }
     }
     
-    // Fire gun
-    if (e.keyCode == 67) {
+    // Fire gun by pressing space
+    if (e.keyCode == 32) {
         if (available==true) {
             available=false;
             fire();    
@@ -156,6 +165,7 @@ window.addEventListener('keydown', function (e) {
     }
 });
 
+// The bullet travel through the screen
 function fire() {
     $(bulletGo.id).show();
     $(bulletGo.id).css({'left':tankGo.tankPos+10, 'top':bulletGo.yAxis});
