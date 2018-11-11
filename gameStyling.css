@@ -34,9 +34,17 @@ body {
     height: 47%;
 }
 
-#ship {
+.ship {
     margin-top 20px;
     width: 280px; 
+}
+
+#shipright {
+    display: none;
+}
+
+#shipleft {
+    display: block;
 }
 
 #enemyLeft {
