@@ -228,19 +228,17 @@ function fire() {
 // The action for the asteroids
 function movingAsteroids(meteorite) {
     $(meteorite.asID).show();
-    var asX = Math.floor((Math.random() * 860) + 70);
+    var asX = Math.floor((Math.random() * 840) + 70);
     var asY = -70;
     $(meteorite.asID).css({'left':asX, 'top':asY});
     
      meteorite.meteAction = setInterval(function(){
-        asY += Math.floor((Math.random() * 4) + 1);;
+        asY += Math.floor((Math.random() * 2) + 1);
         $(meteorite.asID).css('top', asY);
         //Is the fruit too low?
         if (asY >635) {
-            $(meteorite.asID).hide();
-        }
-        if (asY > 700) {
             clearInterval(meteorite.meteAction);
+            $(meteorite.asID).hide();
             movingAsteroids(meteorite);
         }
     }, 10);
