@@ -168,6 +168,7 @@ window.addEventListener('keydown', function (e) {
         playing == true) {
         if (available==true) {
             available=false;
+            bulletGo.yAxis = 600;
             fire();    
         }
     }
@@ -185,7 +186,6 @@ function fire() {
         if (bulletGo.yAxis < -30) {
             available=true;
             clearInterval(bulletGo.actionBullet);
-            bulletGo.yAxis = 600;
         }
     }, 10);
 }
