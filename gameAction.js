@@ -33,6 +33,16 @@ function bullet (id, type, speed, y) {
 }
 var bulletGo; 
 
+// Object meterorite
+function asteroid(id) {
+    this.asID = id;
+    this.meteAction = null;
+}
+var asteroid1;
+var asteroid2;
+var asteroid3;
+var asteroid4;
+
 
 // Start the game
 document.getElementById("StartReset").onclick = function() {
@@ -83,6 +93,16 @@ document.getElementById("StartReset").onclick = function() {
         
         // The bullet original content
         bulletGo = new bullet("#bullet1", 1, 3, 600);
+        
+        // The asteroids original content
+        asteroid1 = new asteroid("#as1");
+        movingAsteroids(asteroid1);
+        
+        asteroid2 = new asteroid("#as2");
+        
+        asteroid3 = new asteroid("#as3");
+        
+        asteroid4 = new asteroid("#as4");
     }
 }
 
@@ -186,6 +206,24 @@ function fire() {
         if (bulletGo.yAxis < -30) {
             available=true;
             clearInterval(bulletGo.actionBullet);
+        }
+    }, 10);
+}
+
+// The action for the asteroids
+function movingAsteroids(meteorite) {
+    $(meteorite.asID).show();
+    var asX = Math.floor((Math.random() * 520) + 0);
+    var asY = -70;
+    $(meteorite.asID).css({'left':asX, 'top':asY});
+    
+     meteorite.meteAction = setInterval(function(){
+        asY += 2;
+        $(meteorite.asID).css('top', asY);
+        //Is the fruit too low?
+        if (asY > 700) {
+            clearInterval(meteorite.meteAction);
+            movingAsteroids(meteorite);
         }
     }, 10);
 }
