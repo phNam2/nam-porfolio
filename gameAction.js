@@ -60,8 +60,8 @@ function enemyShip(enemyID, number) {
     this.number = number;
     this.EnemyAction = null;
     this.position = 0;
+    this.currentSide = "left";
 }
-var currentSide = "left";
 var enemyLeft = [];
 
 // Start the game
@@ -373,46 +373,73 @@ function enemyMovement(){
     enemyLeft[0].position = firstPos;
     $(enemyLeft[0].EnemyID).show();
     $(enemyLeft[0].EnemyID).css({'left':firstPos, 'top':10});
+    movingShip(enemyLeft[0]);
     for (i = 1; i<10; i++) {
         firstPos += 80;
         enemyLeft[i].position = firstPos;
         $(enemyLeft[i].EnemyID).show();
         $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':10});
+        movingShip(enemyLeft[i]);
     }
     
     firstPos = 80;
     $(enemyLeft[10].EnemyID).show();
     $(enemyLeft[10].EnemyID).css({'left':firstPos, 'top':60});
+    movingShip(enemyLeft[10]);
     for (i = 11; i<20; i++) {
         firstPos += 80;
         enemyLeft[i].position = firstPos;
         $(enemyLeft[i].EnemyID).show();
         $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':60});
+        movingShip(enemyLeft[i]);
     }
       
     firstPos = 80;
     $(enemyLeft[20].EnemyID).show();
     $(enemyLeft[20].EnemyID).css({'left':firstPos, 'top':110});
+    movingShip(enemyLeft[20]);
     for (i = 21; i<30; i++) {
         firstPos += 80;
         enemyLeft[i].position = firstPos;
         $(enemyLeft[i].EnemyID).show();
         $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':110});
+        movingShip(enemyLeft[i]);
     }
     
     firstPos = 80;
     $(enemyLeft[30].EnemyID).show();
     $(enemyLeft[30].EnemyID).css({'left':firstPos, 'top':160});
+    movingShip(enemyLeft[30]);
     for (i = 31; i<40; i++) {
         firstPos += 80;
         enemyLeft[i].position = firstPos;
         $(enemyLeft[i].EnemyID).show();
         $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':160});
+        movingShip(enemyLeft[i]);
     }
 }
 
-
-         
+// The enemy movement
+function movingShip(ship){
+    ship.EnemyAction = setInterval(function(){
+        if (ship.currentSide == "left") {
+            if ( (ship.position + 1) > 910) {
+                ship.currentSide = "right";
+            } else {
+                ship.position += 1;
+                $(ship.EnemyID).css('left', ship.position);
+            }
+        }
+        if (ship.currentSide == "right") {
+            if ( (ship.position - 1) < 80) {
+                ship.currentSide = "left";
+            } else {
+                ship.position -= 1;
+                $(ship.EnemyID).css('left', ship.position);
+            }
+        }
+    }, 10);
+}
          
          
          
