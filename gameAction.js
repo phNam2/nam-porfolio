@@ -234,6 +234,12 @@ function gameOver() {
         }
     }
     
+    // Stop all the space ships
+    for (i=0; i<40; i++) {
+        clearInterval(enemyLeft[i].EnemyAction);
+        $(enemyLeft[i].EnemyID).hide();
+    }
+    
     if (ending=="lose") {
         asteroid6 = new asteroid("#as6");
         annihilate(asteroid6);
