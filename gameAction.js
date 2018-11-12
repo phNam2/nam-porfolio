@@ -368,7 +368,7 @@ function movingAsteroids(meteorite) {
 // The postioning for the gift
 function sendGift(gift) {
     $(gift.giftID).show();
-    var asX = Math.floor((Math.random() * 930) + 90);
+    var asX = Math.floor((Math.random() * 840) + 90);
     var asY = 640;
     $(gift.giftID).css({'left':asX, 'top':asY});
 }
