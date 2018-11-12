@@ -278,3 +278,13 @@ body {
     display: none;
     position: absolute;
 }
+
+#levelUp{
+    display: none;
+    position: absolute;
+/*
+    top: 640px;
+    left: 90px;
+    left: 930px;
+*/
+}
