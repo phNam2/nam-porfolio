@@ -194,15 +194,15 @@ body {
 
 
 #win {
-    width: 600px;
-    height: 300px;
+    width: 700px;
+    height: 400px;
     background: linear-gradient(#cd09f4, #6a107c);
     position: absolute;
     text-align: center;
     font-family: cursive;
     border-radius: 30px;
-    top: 200px;
-    left: 550px;
+    top: 150px;
+    left: 500px;
     font-size: 40px;
     line-height: 2.2;
     color: aliceblue;
@@ -211,6 +211,18 @@ body {
 
 .tankHead {
     margin: 20px ;
+}
+
+#brickHead1{
+    position: absolute;
+    top: 250px;
+    left: 20px;
+}
+
+#brickHead2{
+    position: absolute;
+    top: 250px;
+    right: 20px;
 }
 
 .rotate90 {
