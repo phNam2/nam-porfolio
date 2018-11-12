@@ -54,6 +54,16 @@ function gift(bulletType) {
 var Up;
 var giftOut;
 
+// Enemy ship 
+function enemyShip(enemyID, number) {
+    this.EnemyID = enemyID;
+    this.number = number;
+    this.EnemyAction = null;
+}
+var currentSide = "left";
+var enemyLeft = [];
+var enemyRight = [];
+
 // Start the game
 document.getElementById("StartReset").onclick = function() {
     
@@ -162,6 +172,15 @@ document.getElementById("StartReset").onclick = function() {
                 movingAsteroids(asteroids[4]);
             }
         }, 140000);
+        
+        // The enemy ship 
+        for (i=1; i<=40; i++) {
+            var enemies = new enemyShip("#left"+i, i);
+            enemyLeft.push(enemies);
+            enemies = new enemyShip("#right"+i, i);
+            enemyRight.push(enemies);
+        }
+        enemyMovement();
     }
 }
 
