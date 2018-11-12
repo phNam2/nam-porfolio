@@ -4,8 +4,8 @@ body {
     height: 100%;
     width: 100%;
     background-position: center;
-    background-repeat: no-repeat;
-    min-width: 1000px;
+/*    background-repeat: no-repeat;*/
+    min-width: 1070px;
     min-height: 695px;
 }
 
@@ -34,9 +34,17 @@ body {
     height: 47%;
 }
 
-#ship {
+.ship {
     margin-top 20px;
     width: 280px; 
+}
+
+#shipright {
+    display: none;
+}
+
+#shipleft {
+    display: block;
 }
 
 #enemyLeft {
@@ -86,13 +94,13 @@ body {
     width: 250px;
     height: 50px;
     margin: auto;
-    background-color: #1185dd;
+    background: radial-gradient(#7634bc, #360966);
 }
 
 #buttons {
     width: 280px;
     height: 66px;
-    margin: 30px auto 40px;
+    margin: 20px auto 40px;
     font-family: cursive;
     position: relative;
 }
@@ -104,7 +112,7 @@ body {
     left: 20px;
     line-height: 2.3;
     border-radius: 20px;
-    background-color: #f76f6f;
+    background-color: #13a55f;
     box-shadow: 0px 2px black;
     cursor: pointer;
 }
@@ -132,7 +140,7 @@ body {
 }
 
 #StartReset:hover {
-    background-color: #119b33;
+    background-color: #2c62d6;
     color: black;
 }
 
@@ -146,8 +154,8 @@ body {
     height: 40px;
     background-color: yellow;
     position: absolute;
-    top: 50px;
-    left: 60px;
+    top: 60px;
+    left: 110px;
     border-radius: 20px;
     box-shadow: 0px 2px black;
     cursor: pointer;
@@ -157,10 +165,11 @@ body {
 }
 
 #instruction:active {
-    top:52px;
+    top:62px;
     box-shadow: 0px 0px black;
 }
 
+/*
 #sound {
     background-color: yellow;
     position: absolute;
@@ -174,6 +183,7 @@ body {
     top:52px;
     box-shadow: 0px 0px black;
 }
+*/
 
 /*------------------------------------------------*/
 #gameContent {
@@ -184,19 +194,112 @@ body {
 
 
 #win {
-    width: 600px;
-    height: 200px;
+    width: 700px;
+    height: 400px;
     background: linear-gradient(#cd09f4, #6a107c);
     position: absolute;
     text-align: center;
     font-family: cursive;
     border-radius: 30px;
-    top: 200px;
+    top: 150px;
+    left: 500px;
+    font-size: 40px;
+    line-height: 2.2;
+    color: aliceblue;
+    display: none;
+}
+
+.tankHead {
+    margin: 20px ;
+}
+
+#brickHead1{
+    position: absolute;
+    top: 250px;
+    left: 20px;
+}
+
+#brickHead2{
+    position: absolute;
+    top: 250px;
+    right: 20px;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotate180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.rotate270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+
+#giveUp0 {
+    width: 600px;
+    height: 300px;
+    background: linear-gradient(#054656, #0882a0);
+    position: absolute;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 30px;
+    top: 150px;
     left: 550px;
     font-size: 40px;
     line-height: 2;
     color: aliceblue;
+    padding: 20px;
     display: none;
+}
+
+#giveUp {
+    width: 600px;
+    height: 300px;
+    background: linear-gradient(#054656, #0882a0);
+    position: absolute;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 30px;
+    top: 150px;
+    left: 550px;
+    font-size: 40px;
+    line-height: 2;
+    color: aliceblue;
+    padding: 20px;
+    display: none;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 6.0s;
+  animation-name: fade;
+  animation-duration: 6.0s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 1} 
+  to {opacity: 0}
+}
+
+@keyframes fade {
+  from {opacity: 1} 
+  to {opacity: 0}
 }
 
 #lose{
@@ -218,14 +321,10 @@ body {
 
 #animation {
     background-color: black;
-    width: 78%;
-    height: 100%;
     position: absolute;
     left: 300px;
-    min-width: 1065px;
-    max-width: 1065px;
-    min-height: 695px;
-    max-height: 695px;
+    width: 1065px;
+    height: 695px;
 /*    display: none;*/
 }
 
@@ -239,3 +338,67 @@ body {
     top:637px;
     right: 0px;
 }
+
+#wall1 {
+    position:absolute;
+    top: 590px;
+    left: 90px; 
+}
+
+#wall2 {
+    position:absolute;
+    top: 230px;
+    left: 780px; 
+}
+
+#tank{
+    position:absolute;
+    top:645px;
+    left: 90px;
+}
+
+.life{
+    width: 50px;
+    margin: 2px 5px 0px 5px;
+}
+
+.bul {
+    display: none;
+    position: absolute;
+}
+
+.asteroids {
+    display: none;
+    position: absolute;
+}
+
+#levelUp{
+    display: none;
+    position: absolute;
+}
+
+.enemyShip {
+    display: none;
+    position: absolute;
+}
+
+/*
+#left1 {
+    top: 10;
+    left: 910px;
+}
+
+#left2 {
+    top: 60;
+    left: 910px;
+}
+
+#left3 {
+    top: 110;
+    left: 910px;
+}
+
+#left4 {
+    top: 160;
+    left: 910px;
+}*/

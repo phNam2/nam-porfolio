@@ -12,9 +12,10 @@
 <body>
     <div id="sidelines">
         <div id="enemy">
-            <img src="image/game/ship_2QgFMQ.png" alt="Italian Trulli" id="ship">
+            <img src="image/game/ship_2QgFMQ.png" alt="Italian Trulli" class="ship" id="shipleft">
+            <img src="image/game/ship_49FlFw.png" alt="Italian Trulli" class="ship" id="shipright">
             <div id="enemyLeft">
-                <p><strong>Alien ships left:</strong> <span id="number">20</span></p>
+                <p><strong>Alien ships left:</strong> <span id="number">0</span></p>
             </div>
         </div>
         <div id="us">
@@ -22,7 +23,7 @@
                 <p><strong>Score:</strong> <span class="score" >0</span></p>
             </div>
             <div id="time">
-                <p><strong>Time left:</strong> <span id="score">200</span></p>
+                <p><strong>Time left:</strong> <span id="seconds">190</span></p>
             </div>
             <div id="live">
                 
@@ -37,25 +38,105 @@
                 <div id="instruction">
                     <p>?</p>
                 </div>
+<!--
                 <div id="sound">
                     <img src="song/on.png" alt="Italian Trulli" width="40px" id="turn">
                 </div>
+-->
             </div>
         </div>
     </div>
     
     <div id="gameContent">
        <div id="animation">
+            <!--The objects of the our side-->
             <img src="image/game/rock_1KRWVS.png" alt="Italian Trulli" width="80px" id="rock1">
             <img src="image/game/rock_1KRWVS.png" alt="Italian Trulli" width="80px" id="rock2">
+            
+            <img src="image/game/brick_9YIaLF.png" alt="Italian Trulli" width="200px" height="30px" id="wall1">
+            <img src="image/game/brick_9YIaLF.png" alt="Italian Trulli" width="200px" height="30px" id="wall2">
+            
+            <img src="image/game/tank_7bd7xn.png" alt="Italian Trulli" width="30px"  id="tank">
+            
+            <img src="image/game/bullet_0ifkhd.png" alt="Italian Trulli" width="10px" height="30px"  id="bullet1" class="bul">
+            <img src="image/game/fastBullet_1SDB71.png" alt="Italian Trulli" width="10px" height="80px" id="bullet2" class="bul">
+            <img src="image/game/heavyBullet_8jP5N8.png" alt="Italian Trulli" width="10px" height="40px" id="bullet3" class="bul">
+            
+            <!--The asteroids objects-->
+            <img src="image/game/meteor_4phgXu.png" alt="Italian Trulli" height="60px" id="as1" class="asteroids">
+            <img src="image/game/meteor_4phgXu.png" alt="Italian Trulli" height="60px" id="as2" class="asteroids">
+            <img src="image/game/meteor_4phgXu.png" alt="Italian Trulli" height="60px" id="as3" class="asteroids">
+            <img src="image/game/meteor_4phgXu.png" alt="Italian Trulli" height="60px" id="as4" class="asteroids">
+            <img src="image/game/meteor_4phgXu.png" alt="Italian Trulli" height="60px" id="as5" class="asteroids">
+            <img src="image/game/meteor_4phgXu.png" alt="Italian Trulli" height="450px" id="as6" class="asteroids">
+            
+            <!--The present objects-->
+            <img src="image/game/gift_7LEWgw.png" alt="Italian Trulli" height="50px" id="levelUp">
+            
+            <!--The enemy ships objects-->
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left1" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left2" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left3" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left4" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left5" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left6" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left7" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left8" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left9" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left10" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left11" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left12" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left13" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left14" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left15" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left16" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left17" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left18" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left19" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left20" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left21" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left22" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left23" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left24" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left25" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left26" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left27" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left28" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left29" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left30" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left31" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left32" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left33" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left34" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left35" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left36" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left37" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left38" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left39" class="enemyShip">
+            <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" height="50px" id="left40" class="enemyShip">
+            
        </div>
        
        <div id="howTo">
            
        </div>
        <div id="win">
-          <p>Congratulations!!</p>
+          <img src="image/game/tank_7bd7xn.png" alt="Italian Trulli" width="40px" class="tankHead">
+          <img src="image/game/tank_7bd7xn.png" alt="Italian Trulli" width="40px" class="rotate90 tankHead">
+          <img src="image/game/tank_7bd7xn.png" alt="Italian Trulli" width="40px" class="rotate180 tankHead">
+          <img src="image/game/tank_7bd7xn.png" alt="Italian Trulli" width="40px" class="rotate270 tankHead">
+          <img src="image/game/brick_9YIaLF.png" alt="Italian Trulli" width="110px" class="rotate270" id="brickHead1">
+          <img src="image/game/brick_9YIaLF.png" alt="Italian Trulli" width="110px" class="rotate270" id="brickHead2">
+          <p>Congratulations!! You have defended the Earth</p>
            <p>Your score is: <span class="score">0</span></p>
+       </div>
+       <div id="giveUp0" >
+           <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" width="300px" id="turn">
+           <p>Well play, Human</p>
+       </div>
+       <div id="giveUp" class="fade">
+           <img src="image/game/ship_1QpNTm.png" alt="Italian Trulli" width="300px" id="turn">
+           <p>Well play, Human</p>
        </div>
        
        <div id="lose">
@@ -82,6 +163,9 @@
         
 <!-------------------------------------------------------------------------------------------------------------------------------------------------->
     <script src="gameAction.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
