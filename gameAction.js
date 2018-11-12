@@ -109,41 +109,53 @@ document.getElementById("StartReset").onclick = function() {
         movingAsteroids(asteroids[0]);
         
         timeout = setTimeout(function(){
-            asteroid1 = new asteroid("#as2");
-            asteroids.push(asteroid1);
-            movingAsteroids(asteroids[1]);
+            if (playing == true) {
+                asteroid1 = new asteroid("#as2");
+                asteroids.push(asteroid1);
+                movingAsteroids(asteroids[1]);
+            }
         }, 2000);
         
         timeout = setTimeout(function(){
-            asteroid1 = new asteroid("#as3");
-            asteroids.push(asteroid1);
-            movingAsteroids(asteroids[2]);
+            if (playing == true) {
+                asteroid1 = new asteroid("#as3");
+                asteroids.push(asteroid1);
+                movingAsteroids(asteroids[2]);
+            }
         }, 5000);
         
         // The first gift out
         giftOut = setTimeout(function(){
-            Up = new gift(2);
-            sendGift(Up);
+            if (playing == true) {
+                Up = new gift(2);
+                sendGift(Up);
+            }
         }, 60000);
         timeout = setTimeout(function(){
-            $(Up.giftID).hide();
+            if (playing == true) {
+                $(Up.giftID).hide();
             
-            asteroid1 = new asteroid("#as4");
-            asteroids.push(asteroid1);
-            movingAsteroids(asteroids[3]);
+                asteroid1 = new asteroid("#as4");
+                asteroids.push(asteroid1);
+                movingAsteroids(asteroids[3]);
+            }
         }, 70000);
         
         // The second gift out
         giftOut = setTimeout(function(){
-            Up = new gift(3);
-            sendGift(Up);
+            if (playing == true) {
+                Up = new gift(3);
+                sendGift(Up);
+            }
         }, 130000);
         timeout = setTimeout(function(){
-            $(Up.giftID).hide();
+            if (playing == true) {
+                $(Up.giftID).hide();
             
-            asteroid1 = new asteroid("#as5");
-            asteroids.push(asteroid1);
-            movingAsteroids(asteroids[4]);
+                asteroid1 = new asteroid("#as5");
+                asteroids.push(asteroid1);
+                movingAsteroids(asteroids[4]);
+            }
         }, 140000);
     }
 }
@@ -204,7 +216,7 @@ function gameOver() {
         asteroid6 = new asteroid("#as6");
         annihilate(asteroid6);
     } else if (ending=="win"){
-        $("#animation").hide();
+//        $("#animation").hide();
         setTimeout(function(){ $("#continue")[0].play() }, 3000);
         $("#win").show();
     }
