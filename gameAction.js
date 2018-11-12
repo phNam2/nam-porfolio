@@ -217,8 +217,14 @@ function gameOver() {
         annihilate(asteroid6);
     } else if (ending=="win"){
 //        $("#animation").hide();
-        setTimeout(function(){ $("#continue")[0].play() }, 3000);
-        $("#win").show();
+        
+        setTimeout(function(){ $("#giveUp0").show(); }, 2000);
+        setTimeout(function(){ 
+            $("#giveUp0").hide(); 
+            $("#giveUp").show(); 
+        }, 7000);
+        setTimeout(function(){ $("#continue")[0].play() }, 15000);
+        setTimeout(function(){ $("#win").show() }, 15000);
     }
 } 
 

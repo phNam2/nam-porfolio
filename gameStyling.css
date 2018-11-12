@@ -209,6 +209,23 @@ body {
     display: none;
 }
 
+#giveUp0 {
+    width: 600px;
+    height: 300px;
+    background: linear-gradient(#054656, #0882a0);
+    position: absolute;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 30px;
+    top: 150px;
+    left: 550px;
+    font-size: 40px;
+    line-height: 2;
+    color: aliceblue;
+    padding: 20px;
+    display: none;
+}
+
 #giveUp {
     width: 600px;
     height: 300px;
@@ -229,9 +246,9 @@ body {
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 3.0s;
+  -webkit-animation-duration: 6.0s;
   animation-name: fade;
-  animation-duration: 3.0s;
+  animation-duration: 6.0s;
 }
 
 @-webkit-keyframes fade {
