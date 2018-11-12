@@ -347,7 +347,7 @@ body {
 
 #wall2 {
     position:absolute;
-    top: 150px;
+    top: 230px;
     left: 780px; 
 }
 
@@ -373,6 +373,11 @@ body {
 }
 
 #levelUp{
+    display: none;
+    position: absolute;
+}
+
+.enemyShip {
     display: none;
     position: absolute;
 }
