@@ -188,12 +188,10 @@ function annihilate(meteorite){
         asY += 3;
         $(meteorite.asID).css('top', asY);
         if (asY >250) {
+            clearInterval(meteorite.meteAction);
+            $(meteorite.asID).hide();
             $("#kaboom")[0].play();
             $("#animation").hide();
-
-            setTimeout(function() {
-                document.getElementById("kaboom").pause();
-            }, 2000);
         }
     }, 10);
 }
