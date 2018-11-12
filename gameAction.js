@@ -79,7 +79,7 @@ document.getElementById("StartReset").onclick = function() {
         $("#animation").show();
         
         // The number of enemy ships
-        ships = 20;
+        ships = 40;
         $("#number").html(ships);
         
         // Make the scoreboard appear
@@ -382,7 +382,8 @@ function enemyMovement(){
         movingShip(enemyLeft[i]);
     }
     
-    firstPos = 80;
+    firstPos = 160;
+    enemyLeft[10].position = firstPos;
     $(enemyLeft[10].EnemyID).show();
     $(enemyLeft[10].EnemyID).css({'left':firstPos, 'top':60});
     movingShip(enemyLeft[10]);
@@ -395,6 +396,7 @@ function enemyMovement(){
     }
       
     firstPos = 80;
+    enemyLeft[20].position = firstPos;
     $(enemyLeft[20].EnemyID).show();
     $(enemyLeft[20].EnemyID).css({'left':firstPos, 'top':110});
     movingShip(enemyLeft[20]);
@@ -406,7 +408,8 @@ function enemyMovement(){
         movingShip(enemyLeft[i]);
     }
     
-    firstPos = 80;
+    firstPos = 160;
+    enemyLeft[30].position = firstPos;
     $(enemyLeft[30].EnemyID).show();
     $(enemyLeft[30].EnemyID).css({'left':firstPos, 'top':160});
     movingShip(enemyLeft[30]);
