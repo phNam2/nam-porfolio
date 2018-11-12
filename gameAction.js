@@ -1,3 +1,4 @@
+var reload = false;
 var playing = false;
 var ships;
 var score;
@@ -46,11 +47,12 @@ var asteroid6;
 // Start the game
 document.getElementById("StartReset").onclick = function() {
     
-    if (playing == true) {
+    if (reload == true) {
         // reload page
         location.reload();
     }
     else {
+        reload = false;
         playing = true;
         
         // Show the game content
