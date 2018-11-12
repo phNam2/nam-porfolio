@@ -109,14 +109,16 @@ document.getElementById("StartReset").onclick = function() {
         asteroids.push(asteroid1);
         movingAsteroids(asteroids[0]);
         
+        // The second asteroid
         timeout = setTimeout(function(){
-            if (playing == true) {
+            if (playing == true) { // Is the game is still on
                 asteroid1 = new asteroid("#as2");
                 asteroids.push(asteroid1);
                 movingAsteroids(asteroids[1]);
             }
         }, 2000);
         
+        // The third asteroid
         timeout = setTimeout(function(){
             if (playing == true) {
                 asteroid1 = new asteroid("#as3");
@@ -132,9 +134,10 @@ document.getElementById("StartReset").onclick = function() {
                 sendGift(Up);
             }
         }, 60000);
+        // The fourth asteroid
         timeout = setTimeout(function(){
             if (playing == true) {
-                $(Up.giftID).hide();
+                $(Up.giftID).hide(); // Hide the gift
             
                 asteroid1 = new asteroid("#as4");
                 asteroids.push(asteroid1);
@@ -149,9 +152,10 @@ document.getElementById("StartReset").onclick = function() {
                 sendGift(Up);
             }
         }, 130000);
+        // The fifth asteroid
         timeout = setTimeout(function(){
             if (playing == true) {
-                $(Up.giftID).hide();
+                $(Up.giftID).hide(); // Hide the gift
             
                 asteroid1 = new asteroid("#as5");
                 asteroids.push(asteroid1);
@@ -250,6 +254,8 @@ function annihilate(meteorite){
     }, 10);
 }
 
+
+// The 2 walls automatic movement
 function movingWall1(wall){
     wall.actionWall = setInterval(function(){
         if (wall.headTo == "right") {
@@ -271,7 +277,7 @@ function movingWall1(wall){
     }, 10);
 }
 
-
+// The keyboard action listener
 window.addEventListener('keydown', function (e) {
     // go to the left
     if (e.keyCode == 37 &&
@@ -309,7 +315,7 @@ function fire() {
      bulletGo.actionBullet = setInterval(function(){
         bulletGo.yAxis -= bulletGo.speed;
         $(bulletGo.id).css('top', bulletGo.yAxis);
-        //Is the fruit too low?
+        //Is the bullet out of bound?
         if (bulletGo.yAxis < -30) {
             available=true;
             clearInterval(bulletGo.actionBullet);
@@ -327,7 +333,7 @@ function movingAsteroids(meteorite) {
      meteorite.meteAction = setInterval(function(){
         asY += Math.floor((Math.random() * 3) + 1);
         $(meteorite.asID).css('top', asY);
-        //Is the fruit too low?
+        //Is the asteroid out of bound?
         if (asY >635) {
             clearInterval(meteorite.meteAction);
             $(meteorite.asID).hide();
@@ -336,6 +342,7 @@ function movingAsteroids(meteorite) {
     }, 10);
 }
 
+// The postioning for the gift
 function sendGift(gift) {
     $(gift.giftID).show();
     var asX = Math.floor((Math.random() * 930) + 90);
