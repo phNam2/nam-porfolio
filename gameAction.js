@@ -63,7 +63,6 @@ function enemyShip(enemyID, number) {
 }
 var currentSide = "left";
 var enemyLeft = [];
-var enemyRight = [];
 
 // Start the game
 document.getElementById("StartReset").onclick = function() {
@@ -178,8 +177,6 @@ document.getElementById("StartReset").onclick = function() {
         for (i=1; i<=40; i++) {
             var enemies = new enemyShip("#left"+i, i);
             enemyLeft.push(enemies);
-            enemies = new enemyShip("#right"+i, i);
-            enemyRight.push(enemies);
         }
         enemyMovement();
     }
