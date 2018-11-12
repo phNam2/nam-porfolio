@@ -192,6 +192,7 @@ function annihilate(meteorite){
             $(meteorite.asID).hide();
             $("#kaboom")[0].play();
             $("#animation").hide();
+            $("#lose").show();
         }
     }, 10);
 }
