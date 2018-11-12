@@ -59,6 +59,7 @@ function enemyShip(enemyID, number) {
     this.EnemyID = enemyID;
     this.number = number;
     this.EnemyAction = null;
+    this.position = 0;
 }
 var currentSide = "left";
 var enemyLeft = [];
