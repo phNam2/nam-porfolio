@@ -52,7 +52,7 @@ document.getElementById("StartReset").onclick = function() {
         location.reload();
     }
     else {
-        reload = false;
+        reload = true;
         playing = true;
         
         // Show the game content
