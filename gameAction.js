@@ -21,6 +21,7 @@ var wall2;
 // Object tank
 function tank (pos) {
     
+    this.tankID = "#tank";
     this.tankPos = pos;
 }
 var tankGo;
@@ -277,7 +278,7 @@ window.addEventListener('keydown', function (e) {
         playing == true) {
         if ( tankGo.tankPos-6 > 89) {
             tankGo.tankPos -= 6;
-            $("#tank").css('left', tankGo.tankPos);
+            $(tankGo.tankID).css('left', tankGo.tankPos);
         }
     }
     // go to the right
@@ -285,7 +286,7 @@ window.addEventListener('keydown', function (e) {
         playing == true) {
         if ( tankGo.tankPos+6 < 954) {
             tankGo.tankPos += 6;
-            $("#tank").css('left', tankGo.tankPos);
+            $(tankGo.tankID).css('left', tankGo.tankPos);
         }
     }
     
