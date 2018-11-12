@@ -309,6 +309,16 @@ window.addEventListener('keydown', function (e) {
             tankGo.tankPos -= 6;
             $(tankGo.tankID).css('left', tankGo.tankPos);
         }
+
+        // Check if the tank touch the gift
+        if(recthit(tankGo.tankID, Up.giftID)){
+            if (Up.bulletNo == 2) {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 10, 600);
+            } else {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 5, 600);
+            }
+            $(Up.giftID).hide();
+        }
     }
     // go to the right
     if (e.keyCode == 39 &&
@@ -316,6 +326,16 @@ window.addEventListener('keydown', function (e) {
         if ( tankGo.tankPos+6 < 954) {
             tankGo.tankPos += 6;
             $(tankGo.tankID).css('left', tankGo.tankPos);
+        }
+        
+        // Check if the tank touch the gift
+         if(recthit(tankGo.tankID, Up.giftID)){
+            if (Up.bulletNo == 2) {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 10, 600);
+            } else {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 5, 600);
+            }
+            $(Up.giftID).hide();
         }
     }
     
@@ -339,7 +359,7 @@ function fire() {
         bulletGo.yAxis -= bulletGo.speed;
         $(bulletGo.id).css('top', bulletGo.yAxis);
         //Is the bullet out of bound?
-        if (bulletGo.yAxis < -30) {
+        if (bulletGo.yAxis < -40) {
             available=true;
             clearInterval(bulletGo.actionBullet);
         }
@@ -450,8 +470,32 @@ function movingShip(ship){
     }, 10);
 }
          
-         
-         
+// The original code used to check 2 image toch each other
+function recthit(rectone, recttwo){
+    
+    var r1 = $(rectone);
+    var r2 = $(recttwo);
+    
+    var r1x = r1.offset().left;
+    var r1w = r1.width();
+    var r1y = r1.offset().top;
+    var r1h = r1.height();
+    
+    var r2x = r2.offset().left;
+    var r2w = r2.width();
+    var r2y = r2.offset().top;
+    var r2h = r2.height();
+    
+    if( r1y+r1h < r2y ||
+        r1y > r2y+r2h ||
+        r1x > r2x+r2w ||
+        r1x+r1w < r2x ){
+        return false;
+    }else{
+        return true;   
+    }
+    
+}//end function 
          
          
          
