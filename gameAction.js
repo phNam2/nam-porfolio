@@ -179,7 +179,7 @@ function gameOver() {
 function annihilate(meteorite){
     $(meteorite.asID).show();
     var asX = 200;
-    var asY = -150;
+    var asY = -350;
     $(meteorite.asID).css({'left':asX, 'top':asY});
     
      meteorite.meteAction = setInterval(function(){
@@ -188,7 +188,10 @@ function annihilate(meteorite){
         if (asY >250) {
             $("#kaboom")[0].play();
             $("#animation").hide();
-//            document.getElementById("kaboom").pause();
+
+            setTimeout(function() {
+                document.getElementById("kaboom").pause();
+            }, 2000);
         }
     }, 10);
 }
@@ -264,11 +267,11 @@ function fire() {
 function movingAsteroids(meteorite) {
     $(meteorite.asID).show();
     var asX = Math.floor((Math.random() * 840) + 70);
-    var asY = -70;
+    var asY = -100;
     $(meteorite.asID).css({'left':asX, 'top':asY});
     
      meteorite.meteAction = setInterval(function(){
-        asY += Math.floor((Math.random() * 2) + 1);
+        asY += Math.floor((Math.random() * 3) + 1);
         $(meteorite.asID).css('top', asY);
         //Is the fruit too low?
         if (asY >635) {
