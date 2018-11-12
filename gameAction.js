@@ -42,7 +42,16 @@ function asteroid(id) {
     this.meteAction = null;
 }
 var asteroids=[];
+var timeout;
 var asteroid6;
+
+// Gift
+function gift(bulletType) {
+    this.giftID = "#levelUp";
+    this.bulletNo = bulletType;
+}
+var Up;
+var giftOut;
 
 // Start the game
 document.getElementById("StartReset").onclick = function() {
@@ -286,4 +295,11 @@ function movingAsteroids(meteorite) {
             movingAsteroids(meteorite);
         }
     }, 10);
+}
+
+function sendGift(gift) {
+    $(gift.giftID).show();
+    var asX = Math.floor((Math.random() * 930) + 90);
+    var asY = 640;
+    $(gift.giftID).css({'left':asX, 'top':asY});
 }
