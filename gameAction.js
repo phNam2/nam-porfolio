@@ -108,25 +108,39 @@ document.getElementById("StartReset").onclick = function() {
         asteroids.push(asteroid1);
         movingAsteroids(asteroids[0]);
         
-        var timeout2 = setTimeout(function(){
+        timeout = setTimeout(function(){
             asteroid1 = new asteroid("#as2");
             asteroids.push(asteroid1);
             movingAsteroids(asteroids[1]);
         }, 2000);
         
-        var timeout3 = setTimeout(function(){
+        timeout = setTimeout(function(){
             asteroid1 = new asteroid("#as3");
             asteroids.push(asteroid1);
             movingAsteroids(asteroids[2]);
         }, 5000);
         
-        var timeout4 = setTimeout(function(){
+        // The first gift out
+        giftOut = setTimeout(function(){
+            Up = new gift(2);
+            sendGift(Up);
+        }, 60000);
+        timeout = setTimeout(function(){
+            $(Up.giftID).hide();
+            
             asteroid1 = new asteroid("#as4");
             asteroids.push(asteroid1);
             movingAsteroids(asteroids[3]);
         }, 70000);
         
-        var timeout5 = setTimeout(function(){
+        // The second gift out
+        giftOut = setTimeout(function(){
+            Up = new gift(3);
+            sendGift(Up);
+        }, 130000);
+        timeout = setTimeout(function(){
+            $(Up.giftID).hide();
+            
             asteroid1 = new asteroid("#as5");
             asteroids.push(asteroid1);
             movingAsteroids(asteroids[4]);
@@ -173,6 +187,10 @@ function gameOver() {
     // Stop the bullet motion
     clearInterval(bulletGo.actionBullet);
     $(bulletGo.id).hide();
+    
+    // Clear all of the timeout
+    clearTimeout(timeout);
+    clearTimeout(giftOut);
     
     // Stop all the other asteroids
     for (i=0; i<5; i++) {
