@@ -174,6 +174,10 @@ function gameOver() {
     if (ending=="lose") {
         asteroid6 = new asteroid("#as6");
         annihilate(asteroid6);
+    } else if (ending=="win"){
+        
+        setTimeout(function(){ $("#continue")[0].play() }, 3000);
+        $("#win").show();
     }
 } 
 
