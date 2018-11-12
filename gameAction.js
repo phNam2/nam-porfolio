@@ -159,6 +159,7 @@ function gameOver() {
     stopCounting();
     clearInterval(wall1.actionWall);
     clearInterval(wall2.actionWall);
+    $('#StartReset').html("Start Over"); 
     
     // Stop the bullet motion
     clearInterval(bulletGo.actionBullet);
