@@ -369,3 +369,58 @@ function sendGift(gift) {
     var asY = 640;
     $(gift.giftID).css({'left':asX, 'top':asY});
 }
+
+function enemyMovement(){
+    
+    var firstPos = 80;
+    enemyLeft[0].position = firstPos;
+    $(enemyLeft[0].EnemyID).show();
+    $(enemyLeft[0].EnemyID).css({'left':firstPos, 'top':10});
+    for (i = 1; i<10; i++) {
+        firstPos += 65;
+        enemyLeft[i].position = firstPos;
+        $(enemyLeft[i].EnemyID).show();
+        $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':10});
+    }
+    
+    firstPos = 80;
+    $(enemyLeft[10].EnemyID).show();
+    $(enemyLeft[10].EnemyID).css({'left':firstPos, 'top':60});
+    for (i = 11; i<20; i++) {
+        firstPos += 65;
+        enemyLeft[i].position = firstPos;
+        $(enemyLeft[i].EnemyID).show();
+        $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':60});
+    }
+      
+    firstPos = 80;
+    $(enemyLeft[20].EnemyID).show();
+    $(enemyLeft[20].EnemyID).css({'left':firstPos, 'top':110});
+    for (i = 21; i<30; i++) {
+        firstPos += 65;
+        enemyLeft[i].position = firstPos;
+        $(enemyLeft[i].EnemyID).show();
+        $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':110});
+    }
+    
+    firstPos = 80;
+    $(enemyLeft[30].EnemyID).show();
+    $(enemyLeft[30].EnemyID).css({'left':firstPos, 'top':160});
+    for (i = 31; i<40; i++) {
+        firstPos += 65;
+        enemyLeft[i].position = firstPos;
+        $(enemyLeft[i].EnemyID).show();
+        $(enemyLeft[i].EnemyID).css({'left':firstPos, 'top':160});
+    }
+}
+
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
