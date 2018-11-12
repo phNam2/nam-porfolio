@@ -194,15 +194,17 @@ function gameOver() {
     
     // Stop all the other asteroids
     for (i=0; i<5; i++) {
-        clearInterval(asteroids[i].meteAction);
-        $(asteroids[i].asID).hide();
+        if (asteroids[i] != null) {
+            clearInterval(asteroids[i].meteAction);
+            $(asteroids[i].asID).hide();
+        }
     }
     
     if (ending=="lose") {
         asteroid6 = new asteroid("#as6");
         annihilate(asteroid6);
     } else if (ending=="win"){
-        
+        $("#animation").hide();
         setTimeout(function(){ $("#continue")[0].play() }, 3000);
         $("#win").show();
     }
