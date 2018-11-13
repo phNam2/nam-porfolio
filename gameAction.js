@@ -381,8 +381,10 @@ function movingAsteroids(meteorite) {
         if (asY >530) { 
          if(recthit(wall1.wallID, meteorite.asID)){
             clearInterval(meteorite.meteAction);
-            $(meteorite.asID).hide();
-            movingAsteroids(meteorite);
+            $(meteorite.asID).hide("explode", 200);
+            setTimeout(function(){ 
+                movingAsteroids(meteorite);
+            }, 2500);
          }
         }
          
@@ -556,6 +558,3 @@ function recthit(rectone, recttwo){
 //                $("#score").html(score);
 //            }
 //        }
-         
-         
-         
