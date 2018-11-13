@@ -1,7 +1,7 @@
 var reload = false;
 var playing = false;
 var ships;
-var score;
+var score1;
 var liveLeft;
 var timeRemaining;
 
@@ -82,10 +82,10 @@ document.getElementById("StartReset").onclick = function() {
         // The number of enemy ships
         ships = 40;
         $("#number").html(ships);
-        
+    
         // Make the scoreboard appear
-        score = 0;
-        $("#score").html(score);
+        score1 = 0;
+//        $("#score").html(score1);
         
         $('#StartReset').html("Reset"); 
         
@@ -437,13 +437,19 @@ function fire() {
 // Function for byullet 1 and 2
 function bulletDestroyer1(i) {
     if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
-                    
+         
+//        score1++;
+//        $("#score").html(0);
+        
         clearInterval(bulletGo.actionBullet);
         $(bulletGo.id).hide();
         available=true;
                     
         clearInterval(enemyLeft[i].EnemyAction);
-        $(enemyLeft[i].EnemyID).hide();
+        $(enemyLeft[i].EnemyID).hide("explode", 200);
+        
+//        ships--;
+//        $("#number").html(ships);
      }
 }
 
