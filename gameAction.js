@@ -384,7 +384,7 @@ function movingAsteroids(meteorite) {
             $(meteorite.asID).hide("explode", 200);
             setTimeout(function(){ 
                 movingAsteroids(meteorite);
-            }, 2500);
+            }, 2000);
          }
         }
          
@@ -392,11 +392,11 @@ function movingAsteroids(meteorite) {
         if (asY >580) { 
          if(recthit(tankGo.tankID, meteorite.asID)){
             available=false;
-            $(tankGo.tankID).hide(); 
+            $(tankGo.tankID).hide("explode", 200); 
+            tankGo = new tank(90);
+            $(tankGo.tankID).css('left', 90);
             setTimeout(function(){ 
                 available=true;
-                tankGo = new tank(90);
-                $(tankGo.tankID).css('left', 90);
                 $(tankGo.tankID).show(); 
             }, 2000);
              
