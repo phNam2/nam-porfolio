@@ -376,6 +376,26 @@ function movingAsteroids(meteorite) {
      meteorite.meteAction = setInterval(function(){
         asY += Math.floor((Math.random() * 3) + 1);
         $(meteorite.asID).css('top', asY);
+         
+         //Check if the asteroid hit us
+         if(recthit(tankGo.tankID, meteorite.asID)){
+            
+            $(tankGo.tankID).hide(); 
+            setTimeout(function(){ 
+                tankGo = new tank(90);
+                $(tankGo.tankID).css('left', 90);
+                $(tankGo.tankID).show(); 
+            }, 2000);
+             
+             // show the "Lives box"
+            liveLeft -= 1;
+            if (liveLeft == 0) {
+                ending = "lose";
+                 gameOver();
+            }
+            addHearts();
+        }
+         
         //Is the asteroid out of bound?
         if (asY >635) {
             clearInterval(meteorite.meteAction);
