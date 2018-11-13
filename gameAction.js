@@ -198,7 +198,6 @@ function startCounting(){
         $("#seconds").html(timeRemaining);
         if (timeRemaining <= 0) {
             
-            $(".score").html(score);
             ending = "lose";
             gameOver();
         }
