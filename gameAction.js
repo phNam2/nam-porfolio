@@ -377,6 +377,15 @@ function movingAsteroids(meteorite) {
         asY += Math.floor((Math.random() * 3) + 1);
         $(meteorite.asID).css('top', asY);
          
+        //Check if the asteroid hit the wall
+        if (asY >530) { 
+         if(recthit(wall1.wallID, meteorite.asID)){
+            clearInterval(meteorite.meteAction);
+            $(meteorite.asID).hide();
+            movingAsteroids(meteorite);
+         }
+        }
+         
         //Check if the asteroid hit us
         if (asY >580) { 
          if(recthit(tankGo.tankID, meteorite.asID)){
