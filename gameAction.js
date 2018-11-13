@@ -547,32 +547,4 @@ function recthit(rectone, recttwo){
         return true;   
     }
     
-}//end function 
-         
-
-        // Check if the bullet touch the asteroids
-//         if(recthit(bulletGo.id, meteorite.asID)){
-//            
-//            if (bulletGo.type == 1 ||
-//                bulletGo.type == 2) { // Bullet type 1 and 2 cannot destroy the asteroid
-//                
-//                available=true;
-//                clearInterval(bulletGo.actionBullet);
-//                $(bulletGo.id).hide(); 
-//            } else { // But Bullet type 3 can
-//                
-//                // The bullet disappear
-//                available=true;
-//                clearInterval(bulletGo.actionBullet);
-//                $(bulletGo.id).hide(); 
-//                
-//                // The asteroid also disappeared
-//                clearInterval(meteorite.meteAction);
-//                $(meteorite.asID).hide();
-//                movingAsteroids(meteorite);
-//                
-//                // Update the score
-//                score += 15;
-//                $("#score").html(score);
-//            }
-//        }
+}//end function
