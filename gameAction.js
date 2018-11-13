@@ -417,6 +417,10 @@ function movingAsteroids(meteorite) {
                 clearInterval(meteorite.meteAction);
                 $(meteorite.asID).hide();
                 movingAsteroids(meteorite);
+                
+                // Update the score
+                score += 15;
+                $("#score").html(score);
             }
         }
          
