@@ -358,6 +358,24 @@ function fire() {
      bulletGo.actionBullet = setInterval(function(){
         bulletGo.yAxis -= bulletGo.speed;
         $(bulletGo.id).css('top', bulletGo.yAxis);
+         
+        // Is the bullet hit the second wall
+        if (bulletGo.yAxis > 198 &&
+            bulletGo.yAxis < 260) {
+            
+            if(recthit(wall2.wallID, bulletGo.id)){
+                
+                clearInterval(bulletGo.actionBullet);
+                $(bulletGo.id).hide("explode", 100);
+                setTimeout(function(){ 
+                    available=true;
+                }, 200);
+//                available=true;
+            }
+        }
+         
+         
+         
         //Is the bullet out of bound?
         if (bulletGo.yAxis < -40) {
             available=true;
