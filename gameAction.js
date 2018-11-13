@@ -387,80 +387,64 @@ function fire() {
         }
          
         // Is the bullet hit the enemy
+         
+        // Last row of the enemy
         if (bulletGo.yAxis > 30 &&
             bulletGo.yAxis < 39) {
             
             for (i=0; i<10; i++) {
-                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
-                    
-                    clearInterval(bulletGo.actionBullet);
-                    $(bulletGo.id).hide();
-                    available=true;
-                    
-                    clearInterval(enemyLeft[i].EnemyAction);
-                    $(enemyLeft[i].EnemyID).hide();
-                }
+                bulletDestroyer1(i);
             }
         }
          
+        // Third row of the enemy
         if (bulletGo.yAxis > 80 &&
             bulletGo.yAxis < 89) {
             
             for (i=10; i<20; i++) {
-                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
-                    
-                    clearInterval(bulletGo.actionBullet);
-                    $(bulletGo.id).hide();
-                    available=true;
-                    
-                    clearInterval(enemyLeft[i].EnemyAction);
-                    $(enemyLeft[i].EnemyID).hide();
-                }
+                bulletDestroyer1(i);
             }
         }
          
-         if (bulletGo.yAxis > 130 &&
+        // Second row of the enemy
+        if (bulletGo.yAxis > 130 &&
             bulletGo.yAxis < 139) {
             
             for (i=20; i<30; i++) {
-                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
-                    
-                    clearInterval(bulletGo.actionBullet);
-                    $(bulletGo.id).hide();
-                    available=true;
-                    
-                    clearInterval(enemyLeft[i].EnemyAction);
-                    $(enemyLeft[i].EnemyID).hide();
-                }
+                bulletDestroyer1(i);
             }
         }
          
-         if (bulletGo.yAxis > 180 &&
+        // First row of enemy
+        if (bulletGo.yAxis > 180 &&
             bulletGo.yAxis < 189) {
             
             for (i=30; i<40; i++) {
-                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
-                    
-                    clearInterval(bulletGo.actionBullet);
-                    $(bulletGo.id).hide();
-                    available=true;
-                    
-                    clearInterval(enemyLeft[i].EnemyAction);
-                    $(enemyLeft[i].EnemyID).hide();
-                }
+                bulletDestroyer1(i)
             }
         }
          
-         
-         
-         
-         
+
         //Is the bullet out of bound?
         if (bulletGo.yAxis < -40) {
             available=true;
             clearInterval(bulletGo.actionBullet);
         }
     }, 10);
+}
+
+
+// Function for byullet 1 and 2
+function bulletDestroyer1(i) {
+    if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
+                    
+        clearInterval(bulletGo.actionBullet);
+        $(bulletGo.id).hide();
+        available=true;
+                    
+        clearInterval(enemyLeft[i].EnemyAction);
+        $(enemyLeft[i].EnemyID).hide();
+     }
 }
 
 // The action for the asteroids
