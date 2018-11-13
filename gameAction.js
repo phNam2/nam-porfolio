@@ -379,9 +379,10 @@ function movingAsteroids(meteorite) {
          
          //Check if the asteroid hit us
          if(recthit(tankGo.tankID, meteorite.asID)){
-            
+            available=false;
             $(tankGo.tankID).hide(); 
             setTimeout(function(){ 
+                available=true;
                 tankGo = new tank(90);
                 $(tankGo.tankID).css('left', 90);
                 $(tankGo.tankID).show(); 
