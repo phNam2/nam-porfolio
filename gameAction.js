@@ -377,52 +377,27 @@ function movingAsteroids(meteorite) {
         asY += Math.floor((Math.random() * 3) + 1);
         $(meteorite.asID).css('top', asY);
          
-//         //Check if the asteroid hit us
-//         if(recthit(tankGo.tankID, meteorite.asID)){
-//            available=false;
-//            $(tankGo.tankID).hide(); 
-//            setTimeout(function(){ 
-//                available=true;
-//                tankGo = new tank(90);
-//                $(tankGo.tankID).css('left', 90);
-//                $(tankGo.tankID).show(); 
-//            }, 2000);
-//             
-//             // show the "Lives box"
-//            liveLeft -= 1;
-//            if (liveLeft == 0) {
-//                ending = "lose";
-//                 gameOver();
-//            }
-//            addHearts();
-//        }
-         
-        // Check if the bullet touch the asteroids
-//         if(recthit(bulletGo.id, meteorite.asID)){
-//            
-//            if (bulletGo.type == 1 ||
-//                bulletGo.type == 2) { // Bullet type 1 and 2 cannot destroy the asteroid
-//                
-//                available=true;
-//                clearInterval(bulletGo.actionBullet);
-//                $(bulletGo.id).hide(); 
-//            } else { // But Bullet type 3 can
-//                
-//                // The bullet disappear
-//                available=true;
-//                clearInterval(bulletGo.actionBullet);
-//                $(bulletGo.id).hide(); 
-//                
-//                // The asteroid also disappeared
-//                clearInterval(meteorite.meteAction);
-//                $(meteorite.asID).hide();
-//                movingAsteroids(meteorite);
-//                
-//                // Update the score
-//                score += 15;
-//                $("#score").html(score);
-//            }
-//        }
+        //Check if the asteroid hit us
+        if (asY >580) { 
+         if(recthit(tankGo.tankID, meteorite.asID)){
+            available=false;
+            $(tankGo.tankID).hide(); 
+            setTimeout(function(){ 
+                available=true;
+                tankGo = new tank(90);
+                $(tankGo.tankID).css('left', 90);
+                $(tankGo.tankID).show(); 
+            }, 2000);
+             
+             // show the "Lives box"
+            liveLeft -= 1;
+            if (liveLeft == 0) {
+                ending = "lose";
+                 gameOver();
+            }
+            addHearts();
+         }
+        }
          
         //Is the asteroid out of bound?
         if (asY >635) {
@@ -545,7 +520,33 @@ function recthit(rectone, recttwo){
     
 }//end function 
          
-         
+
+        // Check if the bullet touch the asteroids
+//         if(recthit(bulletGo.id, meteorite.asID)){
+//            
+//            if (bulletGo.type == 1 ||
+//                bulletGo.type == 2) { // Bullet type 1 and 2 cannot destroy the asteroid
+//                
+//                available=true;
+//                clearInterval(bulletGo.actionBullet);
+//                $(bulletGo.id).hide(); 
+//            } else { // But Bullet type 3 can
+//                
+//                // The bullet disappear
+//                available=true;
+//                clearInterval(bulletGo.actionBullet);
+//                $(bulletGo.id).hide(); 
+//                
+//                // The asteroid also disappeared
+//                clearInterval(meteorite.meteAction);
+//                $(meteorite.asID).hide();
+//                movingAsteroids(meteorite);
+//                
+//                // Update the score
+//                score += 15;
+//                $("#score").html(score);
+//            }
+//        }
          
          
          
