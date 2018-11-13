@@ -359,6 +359,19 @@ function fire() {
         bulletGo.yAxis -= bulletGo.speed;
         $(bulletGo.id).css('top', bulletGo.yAxis);
          
+        // Is the bullet hit the first wall
+        if (bulletGo.yAxis > 530) {
+            
+            if(recthit(wall1.wallID, bulletGo.id)){
+                
+                clearInterval(bulletGo.actionBullet);
+                $(bulletGo.id).hide("explode", 100);
+                setTimeout(function(){ 
+                    available=true;
+                }, 200);
+            }
+        }
+         
         // Is the bullet hit the second wall
         if (bulletGo.yAxis > 198 &&
             bulletGo.yAxis < 260) {
@@ -370,9 +383,75 @@ function fire() {
                 setTimeout(function(){ 
                     available=true;
                 }, 200);
-//                available=true;
             }
         }
+         
+        // Is the bullet hit the enemy
+        if (bulletGo.yAxis > 30 &&
+            bulletGo.yAxis < 39) {
+            
+            for (i=0; i<10; i++) {
+                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
+                    
+                    clearInterval(bulletGo.actionBullet);
+                    $(bulletGo.id).hide();
+                    available=true;
+                    
+                    clearInterval(enemyLeft[i].EnemyAction);
+                    $(enemyLeft[i].EnemyID).hide();
+                }
+            }
+        }
+         
+        if (bulletGo.yAxis > 80 &&
+            bulletGo.yAxis < 89) {
+            
+            for (i=10; i<20; i++) {
+                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
+                    
+                    clearInterval(bulletGo.actionBullet);
+                    $(bulletGo.id).hide();
+                    available=true;
+                    
+                    clearInterval(enemyLeft[i].EnemyAction);
+                    $(enemyLeft[i].EnemyID).hide();
+                }
+            }
+        }
+         
+         if (bulletGo.yAxis > 130 &&
+            bulletGo.yAxis < 139) {
+            
+            for (i=20; i<30; i++) {
+                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
+                    
+                    clearInterval(bulletGo.actionBullet);
+                    $(bulletGo.id).hide();
+                    available=true;
+                    
+                    clearInterval(enemyLeft[i].EnemyAction);
+                    $(enemyLeft[i].EnemyID).hide();
+                }
+            }
+        }
+         
+         if (bulletGo.yAxis > 180 &&
+            bulletGo.yAxis < 189) {
+            
+            for (i=30; i<40; i++) {
+                if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
+                    
+                    clearInterval(bulletGo.actionBullet);
+                    $(bulletGo.id).hide();
+                    available=true;
+                    
+                    clearInterval(enemyLeft[i].EnemyAction);
+                    $(enemyLeft[i].EnemyID).hide();
+                }
+            }
+        }
+         
+         
          
          
          
