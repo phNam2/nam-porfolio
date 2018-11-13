@@ -8,12 +8,13 @@ var timeRemaining;
 var ending;
 
 // Object wall
-function wall (id, postion, headTo) {
+function wall (id, postion, headTo, furthest) {
     
     this.wallID = id;
     this.actionWall = null;
     this.wallPos = postion;
     this.headTo = headTo;
+    this.furthest = furthest;
 }
 var wall1;
 var wall2;
@@ -102,10 +103,10 @@ document.getElementById("StartReset").onclick = function() {
         
         // Start the content
         // The wall content
-        wall1 = new wall("#wall1", 90, "right");
+        wall1 = new wall("#wall1", 90, "right", 780);
         movingWall1(wall1);
         
-        wall2 = new wall("#wall2", 780, "left");
+        wall2 = new wall("#wall2", 580, "left", 580);
         movingWall1(wall2);
         
         // The tank content
@@ -282,7 +283,7 @@ function annihilate(meteorite){
 function movingWall1(wall){
     wall.actionWall = setInterval(function(){
         if (wall.headTo == "right") {
-            if ( (wall.wallPos + 1) > 780) {
+            if ( (wall.wallPos + 1) > wall.furthest) {
                 wall.headTo = "left";
             } else {
                 wall.wallPos += 1.5;
