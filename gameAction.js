@@ -314,7 +314,7 @@ window.addEventListener('keydown', function (e) {
         // Check if the tank touch the gift
         if(recthit(tankGo.tankID, Up.giftID)){
             if (Up.bulletNo == 2) {
-                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 10, 600);
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 6, 600);
             } else {
                 bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 5, 600);
             }
@@ -332,7 +332,7 @@ window.addEventListener('keydown', function (e) {
         // Check if the tank touch the gift
          if(recthit(tankGo.tankID, Up.giftID)){
             if (Up.bulletNo == 2) {
-                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 10, 600);
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 6, 600);
             } else {
                 bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 5, 600);
             }
