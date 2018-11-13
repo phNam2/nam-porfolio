@@ -420,7 +420,7 @@ function fire() {
             bulletGo.yAxis < 189) {
             
             for (i=30; i<40; i++) {
-                bulletDestroyer1(i)
+                bulletDestroyer1(i);
             }
         }
          
