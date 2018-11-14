@@ -382,11 +382,18 @@ body {
     position: absolute;
 }
 
-/*
-#bullet3 {
-    display: block;
-    top: 260;
-    left: 800;
+#press {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: #3e49ad;
+    top: 150px;
+    left: 550px;
+    font-size: 50;
+    text-align: center;
+    line-height: 2.5;
+    font-family: cursive;
+    padding: 20px;
+    display: block
 }
-*/
 
