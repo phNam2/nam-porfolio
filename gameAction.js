@@ -559,7 +559,9 @@ function movingAsteroids(meteorite) {
             }, 2000);
              
              // show the "Lives box"
+            $("#tankSide"+liveLeft).hide();
             liveLeft -= 1;
+            $("#tankSide"+liveLeft).show();
             if (liveLeft == 0) {
                 ending = "lose";
                  gameOver();
