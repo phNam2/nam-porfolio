@@ -394,14 +394,7 @@ function fire() {
             bulletGo.yAxis < 39) {
             
             for (i=0; i<10; i++) {
-                if (enemyLeft[i].mark == "live") {
-                    bulletDestroyer1(i);
-                    
-                    if (enemyLeft[i].mark == "die") {
-                        ships--;
-                        $("#number").html(ships);
-                    }
-                }
+                display(i);
             }
         }
          
@@ -410,14 +403,7 @@ function fire() {
             bulletGo.yAxis < 89) {
             
             for (i=10; i<20; i++) {
-                if (enemyLeft[i].mark == "live") {
-                    bulletDestroyer1(i);
-                    
-                    if (enemyLeft[i].mark == "die") {
-                        ships--;
-                        $("#number").html(ships);
-                    }
-                }
+                display(i);
             }
         }
          
@@ -426,14 +412,7 @@ function fire() {
             bulletGo.yAxis < 139) {
             
             for (i=20; i<30; i++) {
-                if (enemyLeft[i].mark == "live") {
-                    bulletDestroyer1(i);
-                    
-                    if (enemyLeft[i].mark == "die") {
-                        ships--;
-                        $("#number").html(ships);
-                    }
-                }
+                display(i);
             }
         }
          
@@ -462,6 +441,17 @@ function fire() {
     }, 10);
 }
 
+// Check the way of display eneme ships
+function display(i) {
+    if (enemyLeft[i].mark == "live") {
+        bulletDestroyer1(i);
+                    
+        if (enemyLeft[i].mark == "die") {
+            ships--;
+            $("#number").html(ships);
+        }
+    }
+}
 
 // Function for byullet 1 and 2
 function bulletDestroyer1(i) {
@@ -477,8 +467,7 @@ function bulletDestroyer1(i) {
         clearInterval(enemyLeft[i].EnemyAction);
         $(enemyLeft[i].EnemyID).hide("explode", 200);
         
-//        ships--;
-//        $("#number").html(ships);
+        enemyLeft[i].mark = "die";
      }
 }
 
