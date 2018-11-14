@@ -1,19 +1,20 @@
 var reload = false;
 var playing = false;
 var ships;
-var score;
+var score1;
 var liveLeft;
 var timeRemaining;
 
 var ending;
 
 // Object wall
-function wall (id, postion, headTo) {
+function wall (id, postion, headTo, furthest) {
     
     this.wallID = id;
     this.actionWall = null;
     this.wallPos = postion;
     this.headTo = headTo;
+    this.furthest = furthest;
 }
 var wall1;
 var wall2;
@@ -61,8 +62,11 @@ function enemyShip(enemyID, number) {
     this.EnemyAction = null;
     this.position = 0;
     this.currentSide = "left";
+    this.mark = "live";
 }
 var enemyLeft = [];
+
+var shipDisplay = "left";
 
 // Start the game
 document.getElementById("StartReset").onclick = function() {
@@ -81,10 +85,10 @@ document.getElementById("StartReset").onclick = function() {
         // The number of enemy ships
         ships = 40;
         $("#number").html(ships);
-        
+    
         // Make the scoreboard appear
-        score = 0;
-        $("#score").html(score);
+        score1 = 0;
+//        $("#score").html(score1);
         
         $('#StartReset').html("Reset"); 
         
@@ -102,10 +106,10 @@ document.getElementById("StartReset").onclick = function() {
         
         // Start the content
         // The wall content
-        wall1 = new wall("#wall1", 90, "right");
+        wall1 = new wall("#wall1", 90, "right", 780);
         movingWall1(wall1);
         
-        wall2 = new wall("#wall2", 780, "left");
+        wall2 = new wall("#wall2", 580, "left", 580);
         movingWall1(wall2);
         
         // The tank content
@@ -197,7 +201,6 @@ function startCounting(){
         $("#seconds").html(timeRemaining);
         if (timeRemaining <= 0) {
             
-            $(".score").html(score);
             ending = "lose";
             gameOver();
         }
@@ -282,7 +285,7 @@ function annihilate(meteorite){
 function movingWall1(wall){
     wall.actionWall = setInterval(function(){
         if (wall.headTo == "right") {
-            if ( (wall.wallPos + 1) > 780) {
+            if ( (wall.wallPos + 1) > wall.furthest) {
                 wall.headTo = "left";
             } else {
                 wall.wallPos += 1.5;
@@ -309,6 +312,21 @@ window.addEventListener('keydown', function (e) {
             tankGo.tankPos -= 6;
             $(tankGo.tankID).css('left', tankGo.tankPos);
         }
+
+        // Check if the tank touch the gift
+        if(recthit(tankGo.tankID, Up.giftID)){
+            
+            available=true;
+            clearInterval(bulletGo.actionBullet);
+            $(bulletGo.id).hide();
+            
+            if (Up.bulletNo == 2) {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 6, 600);
+            } else {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 5, 600);
+            }
+            $(Up.giftID).hide();
+        }
     }
     // go to the right
     if (e.keyCode == 39 &&
@@ -316,6 +334,21 @@ window.addEventListener('keydown', function (e) {
         if ( tankGo.tankPos+6 < 954) {
             tankGo.tankPos += 6;
             $(tankGo.tankID).css('left', tankGo.tankPos);
+        }
+        
+        // Check if the tank touch the gift
+         if(recthit(tankGo.tankID, Up.giftID)){
+             
+            available=true;
+            clearInterval(bulletGo.actionBullet);
+            $(bulletGo.id).hide();
+             
+            if (Up.bulletNo == 2) {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 6, 600);
+            } else {
+                bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 5, 600);
+            }
+            $(Up.giftID).hide();
         }
     }
     
@@ -338,12 +371,143 @@ function fire() {
      bulletGo.actionBullet = setInterval(function(){
         bulletGo.yAxis -= bulletGo.speed;
         $(bulletGo.id).css('top', bulletGo.yAxis);
+         
+        // Is the bullet hit the first wall
+        if (bulletGo.yAxis > 530) {
+            
+            if(recthit(wall1.wallID, bulletGo.id)){
+                
+                clearInterval(bulletGo.actionBullet);
+                $(bulletGo.id).hide("explode", 100);
+                setTimeout(function(){ 
+                    available=true;
+                }, 200);
+            }
+        }
+         
+        // Is the bullet hit the second wall
+        if (bulletGo.yAxis > 198 &&
+            bulletGo.yAxis < 260) {
+            
+            if(recthit(wall2.wallID, bulletGo.id)){
+                
+                clearInterval(bulletGo.actionBullet);
+                $(bulletGo.id).hide("explode", 100);
+                setTimeout(function(){ 
+                    available=true;
+                }, 200);
+            }
+        }
+         
+        // Is the bullet hit the enemy
+         
+        // Last row of the enemy
+        if (bulletGo.yAxis > 30 &&
+            bulletGo.yAxis < 39) {
+            
+            for (i=0; i<10; i++) {
+                display(i);
+            }
+        }
+         
+        // Third row of the enemy
+        if (bulletGo.yAxis > 80 &&
+            bulletGo.yAxis < 89) {
+            
+            for (i=10; i<20; i++) {
+                display(i);
+            }
+        }
+         
+        // Second row of the enemy
+        if (bulletGo.yAxis > 130 &&
+            bulletGo.yAxis < 139) {
+            
+            for (i=20; i<30; i++) {
+                display(i);
+            }
+        }
+         
+        // First row of enemy
+        if (bulletGo.yAxis > 180 &&
+            bulletGo.yAxis < 189) {
+            
+            for (i=30; i<40; i++) {
+                display(i);
+            }
+        }
+         
+
         //Is the bullet out of bound?
-        if (bulletGo.yAxis < -30) {
+        if (bulletGo.yAxis < -40) {
             available=true;
             clearInterval(bulletGo.actionBullet);
         }
     }, 10);
+}
+
+// Check the way of display eneme ships
+function display(i) {
+    if (enemyLeft[i].mark == "live") {
+        
+        if (bulletGo.id == "#bullet1" ||
+            bulletGo.id == "#bullet2") {
+            
+            bulletDestroyer1(i);
+        } else {
+            bulletDestroyer2(i);
+        }
+                    
+        if (enemyLeft[i].mark == "die") {
+            ships--;
+            $("#number").html(ships);
+            
+            // Display diffrent picture
+            if (shipDisplay == "left") {
+                
+                shipDisplay = "right";
+                document.getElementById("shipleft").style.display = "none";
+                document.getElementById("shipright").style.display = "block";
+            } else if (shipDisplay == "right") {
+                
+                shipDisplay = "left";
+                document.getElementById("shipright").style.display = "none";
+                document.getElementById("shipleft").style.display = "block";
+            }
+        }
+        
+        if (ships==0) {
+            ending = "win";
+            gameOver();
+        }
+    }
+}
+
+// Function for byullet 1 and 2
+function bulletDestroyer1(i) {
+    if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
+         
+        
+        clearInterval(bulletGo.actionBullet);
+        $(bulletGo.id).hide();
+        available=true;
+                    
+        clearInterval(enemyLeft[i].EnemyAction);
+        $(enemyLeft[i].EnemyID).hide("explode", 200);
+        
+        enemyLeft[i].mark = "die";
+     }
+}
+
+// Function for byullet 1 and 2
+function bulletDestroyer2(i) {
+    if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
+                    
+        clearInterval(enemyLeft[i].EnemyAction);
+        $(enemyLeft[i].EnemyID).hide("explode", 200);
+        
+        enemyLeft[i].mark = "die";
+     }
 }
 
 // The action for the asteroids
@@ -356,6 +520,40 @@ function movingAsteroids(meteorite) {
      meteorite.meteAction = setInterval(function(){
         asY += Math.floor((Math.random() * 3) + 1);
         $(meteorite.asID).css('top', asY);
+         
+        //Check if the asteroid hit the wall
+        if (asY >530) { 
+         if(recthit(wall1.wallID, meteorite.asID)){
+            clearInterval(meteorite.meteAction);
+            $(meteorite.asID).hide("explode", 200);
+            setTimeout(function(){ 
+                movingAsteroids(meteorite);
+            }, 2000);
+         }
+        }
+         
+        //Check if the asteroid hit us
+        if (asY >580) { 
+         if(recthit(tankGo.tankID, meteorite.asID)){
+            available=false;
+            $(tankGo.tankID).hide(); 
+            setTimeout(function(){ 
+                available=true;
+                tankGo = new tank(90);
+                $(tankGo.tankID).css('left', 90);
+                $(tankGo.tankID).show(); 
+            }, 2000);
+             
+             // show the "Lives box"
+            liveLeft -= 1;
+            if (liveLeft == 0) {
+                ending = "lose";
+                 gameOver();
+            }
+            addHearts();
+         }
+        }
+         
         //Is the asteroid out of bound?
         if (asY >635) {
             clearInterval(meteorite.meteAction);
@@ -368,7 +566,7 @@ function movingAsteroids(meteorite) {
 // The postioning for the gift
 function sendGift(gift) {
     $(gift.giftID).show();
-    var asX = Math.floor((Math.random() * 930) + 90);
+    var asX = Math.floor((Math.random() * 840) + 90);
     var asY = 640;
     $(gift.giftID).css({'left':asX, 'top':asY});
 }
@@ -450,10 +648,29 @@ function movingShip(ship){
     }, 10);
 }
          
-         
-         
-         
-         
-         
-         
-         
+// The original code used to check 2 image toch each other
+function recthit(rectone, recttwo){
+    
+    var r1 = $(rectone);
+    var r2 = $(recttwo);
+    
+    var r1x = r1.offset().left;
+    var r1w = r1.width();
+    var r1y = r1.offset().top;
+    var r1h = r1.height();
+    
+    var r2x = r2.offset().left;
+    var r2w = r2.width();
+    var r2y = r2.offset().top;
+    var r2h = r2.height();
+    
+    if( r1y+r1h < r2y ||
+        r1y > r2y+r2h ||
+        r1x > r2x+r2w ||
+        r1x+r1w < r2x ){
+        return false;
+    }else{
+        return true;   
+    }
+    
+}//end function

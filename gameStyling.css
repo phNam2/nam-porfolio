@@ -93,14 +93,14 @@ body {
 #live {
     width: 250px;
     height: 50px;
-    margin: auto;
+    margin: 40px auto;
     background: radial-gradient(#7634bc, #360966);
 }
 
 #buttons {
     width: 280px;
     height: 66px;
-    margin: 20px auto 40px;
+    margin: 40px auto 40px;
     font-family: cursive;
     position: relative;
 }
@@ -154,7 +154,7 @@ body {
     height: 40px;
     background-color: yellow;
     position: absolute;
-    top: 60px;
+    top: 80px;
     left: 110px;
     border-radius: 20px;
     box-shadow: 0px 2px black;
@@ -165,7 +165,7 @@ body {
 }
 
 #instruction:active {
-    top:62px;
+    top:82px;
     box-shadow: 0px 0px black;
 }
 
@@ -348,7 +348,7 @@ body {
 #wall2 {
     position:absolute;
     top: 230px;
-    left: 780px; 
+    left: 580px; 
 }
 
 #tank{
@@ -383,22 +383,10 @@ body {
 }
 
 /*
-#left1 {
-    top: 10;
-    left: 910px;
+#bullet3 {
+    display: block;
+    top: 260;
+    left: 800;
 }
+*/
 
-#left2 {
-    top: 60;
-    left: 910px;
-}
-
-#left3 {
-    top: 110;
-    left: 910px;
-}
-
-#left4 {
-    top: 160;
-    left: 910px;
-}*/
