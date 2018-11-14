@@ -62,6 +62,7 @@ function enemyShip(enemyID, number) {
     this.EnemyAction = null;
     this.position = 0;
     this.currentSide = "left";
+    this.mark = "live";
 }
 var enemyLeft = [];
 
@@ -393,7 +394,14 @@ function fire() {
             bulletGo.yAxis < 39) {
             
             for (i=0; i<10; i++) {
-                bulletDestroyer1(i);
+                if (enemyLeft[i].mark == "live") {
+                    bulletDestroyer1(i);
+                    
+                    if (enemyLeft[i].mark == "die") {
+                        ships--;
+                        $("#number").html(ships);
+                    }
+                }
             }
         }
          
@@ -402,7 +410,14 @@ function fire() {
             bulletGo.yAxis < 89) {
             
             for (i=10; i<20; i++) {
-                bulletDestroyer1(i);
+                if (enemyLeft[i].mark == "live") {
+                    bulletDestroyer1(i);
+                    
+                    if (enemyLeft[i].mark == "die") {
+                        ships--;
+                        $("#number").html(ships);
+                    }
+                }
             }
         }
          
@@ -411,7 +426,14 @@ function fire() {
             bulletGo.yAxis < 139) {
             
             for (i=20; i<30; i++) {
-                bulletDestroyer1(i);
+                if (enemyLeft[i].mark == "live") {
+                    bulletDestroyer1(i);
+                    
+                    if (enemyLeft[i].mark == "die") {
+                        ships--;
+                        $("#number").html(ships);
+                    }
+                }
             }
         }
          
@@ -420,7 +442,14 @@ function fire() {
             bulletGo.yAxis < 189) {
             
             for (i=30; i<40; i++) {
-                bulletDestroyer1(i);
+                if (enemyLeft[i].mark == "live") {
+                    bulletDestroyer1(i);
+                    
+                    if (enemyLeft[i].mark == "die") {
+                        ships--;
+                        $("#number").html(ships);
+                    }
+                }
             }
         }
          
