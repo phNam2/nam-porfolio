@@ -315,6 +315,11 @@ window.addEventListener('keydown', function (e) {
 
         // Check if the tank touch the gift
         if(recthit(tankGo.tankID, Up.giftID)){
+            
+            available=true;
+            clearInterval(bulletGo.actionBullet);
+            $(bulletGo.id).hide();
+            
             if (Up.bulletNo == 2) {
                 bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 6, 600);
             } else {
@@ -333,6 +338,11 @@ window.addEventListener('keydown', function (e) {
         
         // Check if the tank touch the gift
          if(recthit(tankGo.tankID, Up.giftID)){
+             
+            available=true;
+            clearInterval(bulletGo.actionBullet);
+            $(bulletGo.id).hide();
+             
             if (Up.bulletNo == 2) {
                 bulletGo = new bullet("#bullet"+Up.bulletNo, Up.bulletNo, 6, 600);
             } else {
