@@ -8,9 +8,10 @@ var timeRemaining;
 var ending;
 
 // Object wall
-function wall (id, postion, headTo, furthest) {
+function wall (id, id2, postion, headTo, furthest) {
     
     this.wallID = id;
+    this.wallID2 = id2;
     this.actionWall = null;
     this.wallPos = postion;
     this.headTo = headTo;
@@ -111,10 +112,10 @@ document.getElementById("StartReset").onclick = function() {
         
         // Start the content
         // The wall content
-        wall1 = new wall("#wall1", 90, "right", 780);
+        wall1 = new wall("#wall1", "wall1", 90, "right", 780);
         movingWall1(wall1);
         
-        wall2 = new wall("#wall2", 580, "left", 580);
+        wall2 = new wall("#wall2", "wall2", 580, "left", 580);
         movingWall1(wall2);
         
         // The tank content
@@ -294,7 +295,8 @@ function movingWall1(wall){
                 wall.headTo = "left";
             } else {
                 wall.wallPos += 1.5;
-                $(wall.wallID).css('left', wall.wallPos);
+//                $(wall.wallID).css('left', wall.wallPos);
+                document.getElementById(wall.wallID2).style.left = wall.wallPos+"px";
             }
         }
         if (wall.headTo == "left") {
@@ -302,7 +304,8 @@ function movingWall1(wall){
                 wall.headTo = "right";
             } else {
                 wall.wallPos -= 1.5;
-                $(wall.wallID).css('left', wall.wallPos);
+//                $(wall.wallID).css('left', wall.wallPos);
+                document.getElementById(wall.wallID2).style.left = wall.wallPos+"px";
             }
         }
     }, 10);
