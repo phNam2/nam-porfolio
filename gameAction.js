@@ -56,8 +56,9 @@ var Up;
 var giftOut;
 
 // Enemy ship 
-function enemyShip(enemyID, number) {
+function enemyShip(enemyID, enemyID2, number) {
     this.EnemyID = enemyID;
+    this.EnemyID2 = enemyID2;
     this.number = number;
     this.EnemyAction = null;
     this.position = 0;
@@ -182,7 +183,7 @@ document.getElementById("StartReset").onclick = function() {
         
         // The enemy ship 
         for (i=1; i<=40; i++) {
-            var enemies = new enemyShip("#left"+i, i);
+            var enemies = new enemyShip("#left"+i, "left"+i, i);
             enemyLeft.push(enemies);
         }
         enemyMovement();
@@ -643,7 +644,7 @@ function movingShip(ship){
             } else {
                 ship.position += 1;
 //                $(ship.EnemyID).css('left', ship.position);
-                document.getElementById(ship.EnemyID).style.left = ship.position+"px";
+                document.getElementById(ship.EnemyID2).style.left = ship.position+"px";
             }
         }
         if (ship.currentSide == "right") {
@@ -652,7 +653,7 @@ function movingShip(ship){
             } else {
                 ship.position -= 1;
 //                $(ship.EnemyID).css('left', ship.position);
-                document.getElementById(ship.EnemyID).style.left = ship.position+"px";
+                document.getElementById(ship.EnemyID2).style.left = ship.position+"px";
             }
         }
     }, 10);
