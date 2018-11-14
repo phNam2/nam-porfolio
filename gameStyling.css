@@ -189,6 +189,34 @@ body {
     display: none;
 }
 
+#tankSide1 {
+    position: absolute;
+    top: 50px;
+    left:90px;
+    display:block;
+}
+
+#tankSide2 {
+    position: absolute;
+    top: 50px;
+    left:100px;
+    display:none;
+}
+
+#tankSide3 {
+    position: absolute;
+    top: 50px;
+    left:90px;
+    display:none;
+}
+
+#tankSide4 {
+    position: absolute;
+    top: 50px;
+    left:90px;
+    display:none;
+}
+
 .tankHead {
     margin: 20px ;
 }
