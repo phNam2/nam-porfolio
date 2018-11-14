@@ -66,6 +66,8 @@ function enemyShip(enemyID, number) {
 }
 var enemyLeft = [];
 
+var shipDisplay = "left";
+
 // Start the game
 document.getElementById("StartReset").onclick = function() {
     
@@ -442,6 +444,19 @@ function display(i) {
         if (enemyLeft[i].mark == "die") {
             ships--;
             $("#number").html(ships);
+            
+            // Display diffrent picture
+            if (shipDisplay == "left") {
+                
+                shipDisplay = "right";
+                document.getElementById("shipleft").style.display = "none";
+                document.getElementById("shipright").style.display = "block";
+            } else if (shipDisplay == "right") {
+                
+                shipDisplay = "left";
+                document.getElementById("shipright").style.display = "none";
+                document.getElementById("shipleft").style.display = "block";
+            }
         }
         
         if (ships==0) {
