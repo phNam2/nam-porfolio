@@ -79,6 +79,9 @@ document.getElementById("StartReset").onclick = function() {
         reload = true;
         playing = true;
         
+        // Hide the F11 page
+        $("#press").hide();
+        
         // Show the game content
         $("#animation").show();
         
@@ -360,6 +363,11 @@ window.addEventListener('keydown', function (e) {
             bulletGo.yAxis = 600;
             fire();    
         }
+    }
+    
+    // Full screen by pressing F11
+    if (e.keyCode == 122) {
+        $("#press").hide();
     }
 });
 
