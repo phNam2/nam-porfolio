@@ -189,7 +189,7 @@ body {
     display: none;
 }
 
-#tankSide1 {
+#tankSide3 {
     position: absolute;
     top: 50px;
     left:90px;
@@ -203,14 +203,14 @@ body {
     display:none;
 }
 
-#tankSide3 {
+#tankSide1 {
     position: absolute;
     top: 50px;
     left:90px;
     display:none;
 }
 
-#tankSide4 {
+#tankSide0 {
     position: absolute;
     top: 50px;
     left:90px;
