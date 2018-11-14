@@ -421,14 +421,7 @@ function fire() {
             bulletGo.yAxis < 189) {
             
             for (i=30; i<40; i++) {
-                if (enemyLeft[i].mark == "live") {
-                    bulletDestroyer1(i);
-                    
-                    if (enemyLeft[i].mark == "die") {
-                        ships--;
-                        $("#number").html(ships);
-                    }
-                }
+                display(i);
             }
         }
          
