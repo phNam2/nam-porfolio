@@ -443,6 +443,11 @@ function display(i) {
             ships--;
             $("#number").html(ships);
         }
+        
+        if (ships==0) {
+            ending = "win";
+            gameOver();
+        }
     }
 }
 
