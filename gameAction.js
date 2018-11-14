@@ -642,7 +642,8 @@ function movingShip(ship){
                 ship.currentSide = "right";
             } else {
                 ship.position += 1;
-                $(ship.EnemyID).css('left', ship.position);
+//                $(ship.EnemyID).css('left', ship.position);
+                document.getElementById(ship.EnemyID).style.left = ship.position+"px";
             }
         }
         if (ship.currentSide == "right") {
@@ -650,7 +651,8 @@ function movingShip(ship){
                 ship.currentSide = "left";
             } else {
                 ship.position -= 1;
-                $(ship.EnemyID).css('left', ship.position);
+//                $(ship.EnemyID).css('left', ship.position);
+                document.getElementById(ship.EnemyID).style.left = ship.position+"px";
             }
         }
     }, 10);
