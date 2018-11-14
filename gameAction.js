@@ -79,6 +79,9 @@ document.getElementById("StartReset").onclick = function() {
         reload = true;
         playing = true;
         
+        // Hide the F11 page
+        $("#press").hide();
+        
         // Show the game content
         $("#animation").show();
         
@@ -361,6 +364,11 @@ window.addEventListener('keydown', function (e) {
             fire();    
         }
     }
+    
+    // Full screen by pressing F11
+    if (e.keyCode == 122) {
+        $("#press").hide();
+    }
 });
 
 // The bullet travel through the screen
@@ -634,7 +642,8 @@ function movingShip(ship){
                 ship.currentSide = "right";
             } else {
                 ship.position += 1;
-                $(ship.EnemyID).css('left', ship.position);
+//                $(ship.EnemyID).css('left', ship.position);
+                document.getElementById(ship.EnemyID).style.left = ship.position+"px";
             }
         }
         if (ship.currentSide == "right") {
@@ -642,7 +651,8 @@ function movingShip(ship){
                 ship.currentSide = "left";
             } else {
                 ship.position -= 1;
-                $(ship.EnemyID).css('left', ship.position);
+//                $(ship.EnemyID).css('left', ship.position);
+                document.getElementById(ship.EnemyID).style.left = ship.position+"px";
             }
         }
     }, 10);
