@@ -439,7 +439,14 @@ function fire() {
 // Check the way of display eneme ships
 function display(i) {
     if (enemyLeft[i].mark == "live") {
-        bulletDestroyer1(i);
+        
+        if (bulletGo.id == "#bullet1" ||
+            bulletGo.id == "#bullet2") {
+            
+            bulletDestroyer1(i);
+        } else {
+            bulletDestroyer2(i);
+        }
                     
         if (enemyLeft[i].mark == "die") {
             ships--;
@@ -470,12 +477,21 @@ function display(i) {
 function bulletDestroyer1(i) {
     if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
          
-//        score1++;
-//        $("#score").html(0);
         
         clearInterval(bulletGo.actionBullet);
         $(bulletGo.id).hide();
         available=true;
+                    
+        clearInterval(enemyLeft[i].EnemyAction);
+        $(enemyLeft[i].EnemyID).hide("explode", 200);
+        
+        enemyLeft[i].mark = "die";
+     }
+}
+
+// Function for byullet 1 and 2
+function bulletDestroyer2(i) {
+    if (recthit(bulletGo.id, enemyLeft[i].EnemyID)) {
                     
         clearInterval(enemyLeft[i].EnemyAction);
         $(enemyLeft[i].EnemyID).hide("explode", 200);
