@@ -71,12 +71,6 @@ var enemyLeft = [];
 
 var shipDisplay = "left";
 
-// Start the instruction 
-document.getElementById("instruction").onclick = function() {
-    
-}
-
-
 // Start the game
 document.getElementById("StartReset").onclick = function() {
     

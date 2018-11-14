@@ -149,26 +149,6 @@ body {
     box-shadow: 0px 0px black;
 }
 
-#instruction {
-    width: 40px;
-    height: 40px;
-    background-color: yellow;
-    position: absolute;
-    top: 80px;
-    left: 110px;
-    border-radius: 20px;
-    box-shadow: 0px 2px black;
-    cursor: pointer;
-/*    line-height: ;*/
-    font-size: 30px;
-    font-family: Impact, Charcoal, sans-serif;
-}
-
-#instruction:active {
-    top:82px;
-    box-shadow: 0px 0px black;
-}
-
 /*
 #sound {
     background-color: yellow;
