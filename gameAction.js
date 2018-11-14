@@ -39,8 +39,9 @@ function bullet (id, type, speed, y) {
 var bulletGo; 
 
 // Object meterorite
-function asteroid(id) {
+function asteroid(id, id2) {
     this.asID = id;
+    this.asID2 = id2;
     this.meteAction = null;
 }
 var asteroids=[];
@@ -123,14 +124,14 @@ document.getElementById("StartReset").onclick = function() {
         bulletGo = new bullet("#bullet1", 1, 3, 600);
         
         // The asteroids original content
-        var asteroid1 = new asteroid("#as1");
+        var asteroid1 = new asteroid("#as1", "as1");
         asteroids.push(asteroid1);
         movingAsteroids(asteroids[0]);
         
         // The second asteroid
         timeout = setTimeout(function(){
             if (playing == true) { // Is the game is still on
-                asteroid1 = new asteroid("#as2");
+                asteroid1 = new asteroid("#as2", "as2");
                 asteroids.push(asteroid1);
                 movingAsteroids(asteroids[1]);
             }
@@ -139,7 +140,7 @@ document.getElementById("StartReset").onclick = function() {
         // The third asteroid
         timeout = setTimeout(function(){
             if (playing == true) {
-                asteroid1 = new asteroid("#as3");
+                asteroid1 = new asteroid("#as3", "as3");
                 asteroids.push(asteroid1);
                 movingAsteroids(asteroids[2]);
             }
@@ -157,7 +158,7 @@ document.getElementById("StartReset").onclick = function() {
             if (playing == true) {
                 $(Up.giftID).hide(); // Hide the gift
             
-                asteroid1 = new asteroid("#as4");
+                asteroid1 = new asteroid("#as4", "as4");
                 asteroids.push(asteroid1);
                 movingAsteroids(asteroids[3]);
             }
@@ -175,7 +176,7 @@ document.getElementById("StartReset").onclick = function() {
             if (playing == true) {
                 $(Up.giftID).hide(); // Hide the gift
             
-                asteroid1 = new asteroid("#as5");
+                asteroid1 = new asteroid("#as5", "as5");
                 asteroids.push(asteroid1);
                 movingAsteroids(asteroids[4]);
             }
@@ -528,7 +529,8 @@ function movingAsteroids(meteorite) {
     
      meteorite.meteAction = setInterval(function(){
         asY += Math.floor((Math.random() * 3) + 1);
-        $(meteorite.asID).css('top', asY);
+//        $(meteorite.asID).css('top', asY);
+        document.getElementById(meteorite.asID2).style.top = asY+"px";
          
         //Check if the asteroid hit the wall
         if (asY >530) { 
