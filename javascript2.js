@@ -36,6 +36,15 @@ document.getElementById("all4").onclick = function() {
     vid = 2;
 }
 
+document.getElementById("all5").onclick = function() {
+    hide("all");
+    show("back");
+    show("project5");
+    document.getElementById("works").style.background = "#9b0c0c";
+    document.getElementById("works").style.height = "820px";
+    vid = 3;
+}
+
 document.getElementById("back").onclick = function() {
     show("all");
     hide("back");
@@ -43,15 +52,11 @@ document.getElementById("back").onclick = function() {
     hide("project2");
     hide("project3");
     hide("project4");
+    hide("project5");
     document.getElementById("works").style.background = "radial-gradient(#0a1187, #4c43cc)";
     document.getElementById("works").style.height = "800px";
     
-    
-    if (vid ==1) {
-        $('#video1')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');     
-    } else if (vid ==2) {
-        $('#video2')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');            
-    }
+    $("#video"+vid)[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*'); 
 }
 
 
