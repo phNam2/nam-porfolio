@@ -239,7 +239,8 @@ function gameOver() {
     for (i=0; i<5; i++) {
         if (asteroids[i] != null) {
             clearInterval(asteroids[i].meteAction);
-            $(asteroids[i].asID).hide();
+//            $(asteroids[i].asID).hide();
+            document.getElementById(asteroids[i].asID2).style.display = "none";
         }
     }
     
