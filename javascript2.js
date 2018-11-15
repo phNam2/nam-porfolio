@@ -41,7 +41,7 @@ document.getElementById("all5").onclick = function() {
     show("back");
     show("project5");
     document.getElementById("works").style.background = "#9b0c0c";
-    document.getElementById("works").style.height = "820px";
+    document.getElementById("works").style.height = "880px";
     vid = 3;
 }
 
