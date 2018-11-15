@@ -392,14 +392,14 @@ body {
 
 #press {
     position: absolute;
-    width: 500px;
+    width: 600px;
     height: 400px;
     background-color: #3e49ad;
-    top: 150px;
-    left: 550px;
-    font-size: 50;
+    top: 120px;
+    left: 500px;
+    font-size: 40;
     text-align: center;
-    line-height: 2.5;
+    line-height: 2;
     font-family: cursive;
     padding: 20px;
     display: block
