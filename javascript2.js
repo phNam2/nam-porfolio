@@ -45,6 +45,10 @@ document.getElementById("all5").onclick = function() {
     vid = 3;
 }
 
+
+
+
+//////////////////////////////////////////////////////////// Back button
 document.getElementById("back").onclick = function() {
     show("all");
     hide("back");
