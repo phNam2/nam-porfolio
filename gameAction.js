@@ -255,7 +255,7 @@ function gameOver() {
         annihilate(asteroid6);
     } else if (ending=="win"){
         $("#animation").hide();
-        
+        $(tankGo.tankID).hide();
         setTimeout(function(){ $("#giveUp0").show(); }, 2000);
         setTimeout(function(){ 
             $("#giveUp0").hide(); 
