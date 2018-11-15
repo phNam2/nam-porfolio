@@ -254,7 +254,7 @@ function gameOver() {
         asteroid6 = new asteroid("#as6");
         annihilate(asteroid6);
     } else if (ending=="win"){
-//        $("#animation").hide();
+        $("#animation").hide();
         
         setTimeout(function(){ $("#giveUp0").show(); }, 2000);
         setTimeout(function(){ 
