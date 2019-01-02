@@ -74,6 +74,9 @@ var shipDisplay = "left";
 // Start the game
 document.getElementById("StartReset").onclick = function() {
     
+//    window.alert( $(window).height() );
+//    window.alert( $(window).width() );
+    
     if (reload == true) {
         // reload page
         location.reload();
