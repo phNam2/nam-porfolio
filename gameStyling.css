@@ -172,6 +172,25 @@ body {
     height: 100%;
 }
 
+#instructions {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 1300px;
+    line-height: 1.5;
+    border-radius: 20px;
+    background-color: #d31313;
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    display: block;
+}
+
+#instructions:active {
+    top: 22px;
+}
 
 #win {
     width: 700px;
