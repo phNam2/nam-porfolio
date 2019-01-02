@@ -11,5 +11,5 @@
 <p><img alt="Image" title="icon" src="https://github.com/phNam2/portfolio/blob/master/image/game/rock_1KRWVS.png" height="70px"/> <a href="https://logomakr.com/1KRWVS">Rock image Link</a> </p>
 <p><img alt="Image" title="icon" src="https://github.com/phNam2/portfolio/blob/master/image/game/gift_7LEWgw.png" height="70px"/> <a href="https://logomakr.com/7LEWgw">Gift image Link</a> </p>
 <p><img alt="Image" title="icon" src="https://github.com/phNam2/portfolio/blob/master/image/game/bullet_0ifkhd.png" height="70px"/> <a href="https://logomakr.com/0ifkhd">Normal bullet image Link</a> </p>
-<p><img alt="Image" title="icon" src="https://github.com/phNam2/portfolio/blob/master/image/game/fastBullet_1SDB71.png" height="70px"/> <a href="https://logomakr.com/1SDB71">Fast image Link</a> </p>
-<p><img alt="Image" title="icon" src="https://github.com/phNam2/portfolio/blob/master/image/game/heavyBullet_8jP5N8.png" height="70px"/> <a href="https://logomakr.com/8jP5N8">Heavy image Link</a> </p>
+<p><img alt="Image" title="icon" src="https://github.com/phNam2/portfolio/blob/master/image/game/fastBullet_1SDB71.png" height="70px"/> <a href="https://logomakr.com/1SDB71">Fast bullet image Link</a> </p>
+<p><img alt="Image" title="icon" src="https://github.com/phNam2/portfolio/blob/master/image/game/heavyBullet_8jP5N8.png" height="70px"/> <a href="https://logomakr.com/8jP5N8">Heavy bullet image Link</a> </p>
