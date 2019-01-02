@@ -185,7 +185,7 @@ body {
     color: white;
     font-size: 25px;
     text-align: center;
-    display: block;
+    display: none;
 }
 
 #instructions:active {
